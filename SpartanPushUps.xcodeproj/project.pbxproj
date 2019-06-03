@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BAA1E1558EC346120FC6A0E /* Pods_SpartanPushUps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */; };
+		8346467D22A530F300FAF1C5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8346467C22A530F300FAF1C5 /* bg.png */; };
+		8346468122A5314500FAF1C5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346468022A5314500FAF1C5 /* Config.swift */; };
+		8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346468222A5461C00FAF1C5 /* Extensions.swift */; };
 		835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD5022A12C6300E2C253 /* AppDelegate.swift */; };
 		835DAD5322A12C6300E2C253 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD5222A12C6300E2C253 /* ViewController.swift */; };
-		835DAD5622A12C6300E2C253 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835DAD5422A12C6300E2C253 /* Main.storyboard */; };
 		835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835DAD5722A12C6600E2C253 /* Assets.xcassets */; };
 		835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */; };
 		835DAD6622A12C6700E2C253 /* SpartanPushUpsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD6522A12C6700E2C253 /* SpartanPushUpsTests.swift */; };
 		835DAD7122A12C6700E2C253 /* SpartanPushUpsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD7022A12C6700E2C253 /* SpartanPushUpsUITests.swift */; };
+		8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49A22A55BE700D68C2E /* SetupViewController.swift */; };
+		8367F49D22A561CE00D68C2E /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49C22A561CE00D68C2E /* Neon.swift */; };
+		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
+		8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */; };
+		CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */; };
+		EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0554D75C386AF65060B0479C /* Pods-SpartanPushUpsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsUITests.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsUITests/Pods-SpartanPushUpsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUpsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUpsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B7BAAD24A3B49E9EE9D828C /* Pods-SpartanPushUps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUps.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUps/Pods-SpartanPushUps.debug.xcconfig"; sourceTree = "<group>"; };
+		8346467C22A530F300FAF1C5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		8346468022A5314500FAF1C5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8346468222A5461C00FAF1C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		835DAD4D22A12C6300E2C253 /* SpartanPushUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanPushUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DAD5022A12C6300E2C253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		835DAD5222A12C6300E2C253 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		835DAD5522A12C6300E2C253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		835DAD5722A12C6600E2C253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		835DAD5A22A12C6600E2C253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		835DAD5C22A12C6600E2C253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +62,15 @@
 		835DAD6C22A12C6700E2C253 /* SpartanPushUpsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanPushUpsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DAD7022A12C6700E2C253 /* SpartanPushUpsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanPushUpsUITests.swift; sourceTree = "<group>"; };
 		835DAD7222A12C6700E2C253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8367F49A22A55BE700D68C2E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		8367F49C22A561CE00D68C2E /* Neon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
+		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
+		8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsUITests/Pods-SpartanPushUpsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.release.xcconfig"; sourceTree = "<group>"; };
+		9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA53BA2657D5C709ACDD339 /* Pods-SpartanPushUpsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C3C907DF56A9D6580A9D4633 /* Pods-SpartanPushUps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUps.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUps/Pods-SpartanPushUps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BAA1E1558EC346120FC6A0E /* Pods_SpartanPushUps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +94,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8346467A22A52D0100FAF1C5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8346467B22A52E9B00FAF1C5 /* Img */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8346467B22A52E9B00FAF1C5 /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				8346467C22A530F300FAF1C5 /* bg.png */,
+			);
+			path = Img;
+			sourceTree = "<group>";
+		};
+		8346467F22A5312400FAF1C5 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				8346468022A5314500FAF1C5 /* Config.swift */,
+				8346468222A5461C00FAF1C5 /* Extensions.swift */,
+				8367F49C22A561CE00D68C2E /* Neon.swift */,
+				8367F49E22A56CED00D68C2E /* DeviceProperties.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
 		835DAD4422A12C6200E2C253 = {
 			isa = PBXGroup;
 			children = (
+				8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */,
 				835DAD4F22A12C6300E2C253 /* SpartanPushUps */,
 				835DAD6422A12C6600E2C253 /* SpartanPushUpsTests */,
 				835DAD6F22A12C6700E2C253 /* SpartanPushUpsUITests */,
 				835DAD4E22A12C6300E2C253 /* Products */,
+				AA91517A144E168C38DDD322 /* Pods */,
+				DC96363AD1EEE30EBCEB635E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +154,11 @@
 		835DAD4F22A12C6300E2C253 /* SpartanPushUps */ = {
 			isa = PBXGroup;
 			children = (
+				8346467F22A5312400FAF1C5 /* AppConfig */,
+				8346467A22A52D0100FAF1C5 /* Assets */,
 				835DAD5022A12C6300E2C253 /* AppDelegate.swift */,
 				835DAD5222A12C6300E2C253 /* ViewController.swift */,
-				835DAD5422A12C6300E2C253 /* Main.storyboard */,
+				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
 				835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */,
 				835DAD5C22A12C6600E2C253 /* Info.plist */,
@@ -125,6 +184,29 @@
 			path = SpartanPushUpsUITests;
 			sourceTree = "<group>";
 		};
+		AA91517A144E168C38DDD322 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B7BAAD24A3B49E9EE9D828C /* Pods-SpartanPushUps.debug.xcconfig */,
+				C3C907DF56A9D6580A9D4633 /* Pods-SpartanPushUps.release.xcconfig */,
+				BFA53BA2657D5C709ACDD339 /* Pods-SpartanPushUpsTests.debug.xcconfig */,
+				92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */,
+				891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */,
+				0554D75C386AF65060B0479C /* Pods-SpartanPushUpsUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC96363AD1EEE30EBCEB635E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */,
+				38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */,
+				21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 835DAD7522A12C6700E2C253 /* Build configuration list for PBXNativeTarget "SpartanPushUps" */;
 			buildPhases = (
+				1E3365F2CFEC57A1487A1840 /* [CP] Check Pods Manifest.lock */,
 				835DAD4922A12C6200E2C253 /* Sources */,
 				835DAD4A22A12C6200E2C253 /* Frameworks */,
 				835DAD4B22A12C6200E2C253 /* Resources */,
@@ -149,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 835DAD7822A12C6700E2C253 /* Build configuration list for PBXNativeTarget "SpartanPushUpsTests" */;
 			buildPhases = (
+				B2E1A9C418917914EC8D6B0D /* [CP] Check Pods Manifest.lock */,
 				835DAD5D22A12C6600E2C253 /* Sources */,
 				835DAD5E22A12C6600E2C253 /* Frameworks */,
 				835DAD5F22A12C6600E2C253 /* Resources */,
@@ -167,6 +251,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 835DAD7B22A12C6700E2C253 /* Build configuration list for PBXNativeTarget "SpartanPushUpsUITests" */;
 			buildPhases = (
+				2530DE9A2CA116B1E2984E04 /* [CP] Check Pods Manifest.lock */,
 				835DAD6822A12C6700E2C253 /* Sources */,
 				835DAD6922A12C6700E2C253 /* Frameworks */,
 				835DAD6A22A12C6700E2C253 /* Resources */,
@@ -230,8 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */,
+				8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */,
 				835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */,
-				835DAD5622A12C6300E2C253 /* Main.storyboard in Resources */,
+				8346467D22A530F300FAF1C5 /* bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +337,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E3365F2CFEC57A1487A1840 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpartanPushUps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2530DE9A2CA116B1E2984E04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpartanPushUpsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2E1A9C418917914EC8D6B0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpartanPushUpsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		835DAD4922A12C6200E2C253 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */,
 				835DAD5322A12C6300E2C253 /* ViewController.swift in Sources */,
+				8367F49D22A561CE00D68C2E /* Neon.swift in Sources */,
 				835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */,
+				8346468122A5314500FAF1C5 /* Config.swift in Sources */,
+				8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */,
+				8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +453,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		835DAD5422A12C6300E2C253 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				835DAD5522A12C6300E2C253 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -430,9 +582,11 @@
 		};
 		835DAD7622A12C6700E2C253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7BAAD24A3B49E9EE9D828C /* Pods-SpartanPushUps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SpartanPushUps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,9 +601,11 @@
 		};
 		835DAD7722A12C6700E2C253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C907DF56A9D6580A9D4633 /* Pods-SpartanPushUps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SpartanPushUps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +620,7 @@
 		};
 		835DAD7922A12C6700E2C253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFA53BA2657D5C709ACDD339 /* Pods-SpartanPushUpsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +641,7 @@
 		};
 		835DAD7A22A12C6700E2C253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +662,7 @@
 		};
 		835DAD7C22A12C6700E2C253 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +682,7 @@
 		};
 		835DAD7D22A12C6700E2C253 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0554D75C386AF65060B0479C /* Pods-SpartanPushUpsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_SpartanPushUpsUITests {
+  umbrella header "Pods-SpartanPushUpsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
