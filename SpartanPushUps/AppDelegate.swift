@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        application.statusBarStyle = .lightContent
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainController = ViewController(nibName: nil, bundle: nil)
         let navController = UINavigationController(rootViewController: mainController)
