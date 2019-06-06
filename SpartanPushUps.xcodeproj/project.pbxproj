@@ -21,6 +21,8 @@
 		8367F49D22A561CE00D68C2E /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49C22A561CE00D68C2E /* Neon.swift */; };
 		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
 		8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */; };
+		836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */; };
+		83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C63C2E22A94542003B911A /* ProgressBarView.swift */; };
 		CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */; };
 		EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		8367F49C22A561CE00D68C2E /* Neon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
 		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
 		8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		83C63C2E22A94542003B911A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsUITests/Pods-SpartanPushUpsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,17 +108,18 @@
 		8346467A22A52D0100FAF1C5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				8346467B22A52E9B00FAF1C5 /* Img */,
+				836F8F0B22A95EDB0020726B /* Fonts */,
+				8346467B22A52E9B00FAF1C5 /* Images */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		8346467B22A52E9B00FAF1C5 /* Img */ = {
+		8346467B22A52E9B00FAF1C5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				8346467C22A530F300FAF1C5 /* bg.png */,
 			);
-			path = Img;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		8346467F22A5312400FAF1C5 /* AppConfig */ = {
@@ -159,6 +164,7 @@
 				835DAD5022A12C6300E2C253 /* AppDelegate.swift */,
 				835DAD5222A12C6300E2C253 /* ViewController.swift */,
 				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
+				83C63C2E22A94542003B911A /* ProgressBarView.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
 				835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */,
 				835DAD5C22A12C6600E2C253 /* Info.plist */,
@@ -182,6 +188,14 @@
 				835DAD7222A12C6700E2C253 /* Info.plist */,
 			);
 			path = SpartanPushUpsUITests;
+			sourceTree = "<group>";
+		};
+		836F8F0B22A95EDB0020726B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		AA91517A144E168C38DDD322 /* Pods */ = {
@@ -316,6 +330,7 @@
 			files = (
 				835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */,
 				8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */,
+				836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */,
 				835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */,
 				8346467D22A530F300FAF1C5 /* bg.png in Resources */,
 			);
@@ -412,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */,
+				83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */,
 				835DAD5322A12C6300E2C253 /* ViewController.swift in Sources */,
 				8367F49D22A561CE00D68C2E /* Neon.swift in Sources */,
 				835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */,

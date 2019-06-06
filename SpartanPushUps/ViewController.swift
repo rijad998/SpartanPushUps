@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     fileprivate let openSetupBtn = UIButton()
+    fileprivate let progressBar = ProgressBarView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class ViewController: UIViewController {
     
     func layout(){
         
+        progressBar.onSide(.top, statusBarHeight, width: progressBar.width, height: progressBar.height)
+        
+        
+        
         let frameWidth = self.view.frame.width
         let frameHeight: CGFloat
         if DeviceProperty.isTypeX() {
@@ -33,7 +38,6 @@ class ViewController: UIViewController {
         } else {
             frameHeight = self.view.frame.height
         }
-        
         openSetupBtn.frame = CGRect(x: 19, y: frameHeight - 70, width: frameWidth - 38, height: 50)
         openSetupBtn.layer.cornerRadius = 25
         openSetupBtn.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.3098039216, blue: 0.9960784314, alpha: 1)
@@ -43,11 +47,14 @@ class ViewController: UIViewController {
     }
     
     func controlSuperView() {
+        
         layout()
         self.view.addSubview(openSetupBtn)
+        self.view.addSubview(progressBar)
     }
     
     @objc func openSetup(sender: UIButton) {
+        
         let setupController = SetupViewController()
         self.navigationController?.pushViewController(setupController, animated: true)
     }

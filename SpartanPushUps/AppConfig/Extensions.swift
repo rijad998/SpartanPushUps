@@ -46,4 +46,12 @@ extension UIViewController {
             return navBarHeight + statusBarHeight
         }
     }
+    
+    func setNavigationBarTransparent(){
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
 }

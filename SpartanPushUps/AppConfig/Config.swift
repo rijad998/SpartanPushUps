@@ -15,3 +15,8 @@ public var bgImg: UIImage {
     }
 }
 
+public struct Font {
+    static let pacifico = "Pacifico-Regular"
+    static let roboto = "Roboto-Regular"
+}
+
