@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     fileprivate let openSetupBtn = UIButton()
     fileprivate let progressBar = ProgressBarView(level: "NOVICE")
+    fileprivate let roundNodeSeries = RoundNodeSeries()
     
     
     override func viewDidLoad() {
@@ -29,10 +30,15 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layout()
+    }
     
     func layout(){
         
-        progressBar.onSide(.top, statusBarHeight, width: progressBar.width, height: progressBar.height)
+        progressBar.onSide(.top, statusBarHeight + 5, width: progressBar.width, height: progressBar.height)
+        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + 15, width: roundNodeSeries.width, height: roundNodeSeries.height)
         
         let frameWidth = self.view.frame.width
         let frameHeight: CGFloat
@@ -55,6 +61,7 @@ class ViewController: UIViewController {
         setup()
         self.view.addSubview(openSetupBtn)
         self.view.addSubview(progressBar)
+        self.view.addSubview(roundNodeSeries)
     }
     
     
@@ -65,7 +72,9 @@ class ViewController: UIViewController {
         openSetupBtn.setTitle("SETUP", for: .normal)
         openSetupBtn.addTarget(self, action: #selector(openSetup(sender:)), for: .touchUpInside)
         
-        progressBar.setup(progress: 58)
+        progressBar.setup(progress: 87)
+        
+        roundNodeSeries.layout()
     }
     
     

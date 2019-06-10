@@ -16,11 +16,11 @@ class ProgressBarView: UIView {
     fileprivate var progressHolder = UIView()
     fileprivate var progressResult = UIView()
     fileprivate var level: String = ""
-    fileprivate let progHoldWidth = UIScreen.main.bounds.width - 40
+    fileprivate let progressHoldWidth = UIScreen.main.bounds.width - 40
     
     
     init(level: String) {
-        super.init(frame: CGRect(x: 0, y: 55, width: UIScreen.main.bounds.width, height: 64))
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
         self.level = level
     }
     
@@ -60,7 +60,6 @@ class ProgressBarView: UIView {
         
     }
     
-    
     func setup(progress: CGFloat) {
         
         layout()
@@ -68,7 +67,7 @@ class ProgressBarView: UIView {
         
         progressLabel.text = "\(progress)% completed"
         
-        let progressPercentage = (progress * progHoldWidth) / 100
+        let progressPercentage = (progress * progressHoldWidth) / 100
         
         let w: CGFloat = progressPercentage - 6
         progressResult.onSide(.left, 3, width: w, height: 4)
@@ -77,9 +76,9 @@ class ProgressBarView: UIView {
     
     func layout() {
         
-        levelLabel.frame = CGRect(x: 26, y: 0, width: progHoldWidth - 12, height: 18)
-        progressLabel.frame = CGRect(x: 26, y: 24, width: progHoldWidth - 12, height: 24)
-        progressHolder.frame = CGRect(x: 20, y: 52, width: progHoldWidth, height: 10)
+        levelLabel.frame = CGRect(x: 26, y: 0, width: progressHoldWidth - 12, height: 18)
+        progressLabel.frame = CGRect(x: 26, y: 24, width: progressHoldWidth - 12, height: 24)
+        progressHolder.frame = CGRect(x: 20, y: 52, width: progressHoldWidth, height: 10)
     }
     
 }
