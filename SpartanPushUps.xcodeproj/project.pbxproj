@@ -24,6 +24,7 @@
 		836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */; };
 		836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */; };
 		836F8F1122AA936B0020726B /* Exo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */; };
+		836F8F1322AE5A9B0020726B /* HorizontalRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F1222AE5A9B0020726B /* HorizontalRule.swift */; };
 		83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C63C2E22A94542003B911A /* ProgressBarView.swift */; };
 		CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */; };
 		EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */; };
@@ -73,6 +74,7 @@
 		836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundNodeSeries.swift; sourceTree = "<group>"; };
 		836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-BoldItalic.ttf"; path = "../../../../../Downloads/Exo/Exo-BoldItalic.ttf"; sourceTree = "<group>"; };
+		836F8F1222AE5A9B0020726B /* HorizontalRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRule.swift; sourceTree = "<group>"; };
 		83C63C2E22A94542003B911A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsUITests/Pods-SpartanPushUpsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
 				83C63C2E22A94542003B911A /* ProgressBarView.swift */,
 				836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */,
+				836F8F1222AE5A9B0020726B /* HorizontalRule.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
 				835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */,
 				835DAD5C22A12C6600E2C253 /* Info.plist */,
@@ -440,6 +443,7 @@
 				835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */,
 				8346468122A5314500FAF1C5 /* Config.swift in Sources */,
 				836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */,
+				836F8F1322AE5A9B0020726B /* HorizontalRule.swift in Sources */,
 				8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */,
 				8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */,
 			);

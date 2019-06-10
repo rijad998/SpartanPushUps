@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     fileprivate let openSetupBtn = UIButton()
     fileprivate let progressBar = ProgressBarView(level: "NOVICE")
     fileprivate let roundNodeSeries = RoundNodeSeries()
+    fileprivate let horizontalRule = HorizontalRule()
+    fileprivate let horizontalRuleTwo = HorizontalRule()
     
     
     override func viewDidLoad() {
@@ -38,7 +40,9 @@ class ViewController: UIViewController {
     func layout(){
         
         progressBar.onSide(.top, statusBarHeight + 5, width: progressBar.width, height: progressBar.height)
-        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + 15, width: roundNodeSeries.width, height: roundNodeSeries.height)
+        horizontalRule.onSide(.top, statusBarHeight + progressBar.height + 5, width: horizontalRule.width, height: horizontalRule.height)
+        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height + 15, width: roundNodeSeries.width, height: roundNodeSeries.height)
+        horizontalRuleTwo.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height +  roundNodeSeries.height + 5, width: horizontalRuleTwo.width, height: horizontalRuleTwo.height)
         
         let frameWidth = self.view.frame.width
         let frameHeight: CGFloat
@@ -62,6 +66,8 @@ class ViewController: UIViewController {
         self.view.addSubview(openSetupBtn)
         self.view.addSubview(progressBar)
         self.view.addSubview(roundNodeSeries)
+        self.view.addSubview(horizontalRule)
+        self.view.addSubview(horizontalRuleTwo)
     }
     
     

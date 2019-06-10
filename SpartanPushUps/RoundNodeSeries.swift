@@ -88,18 +88,21 @@ class SeriaItem: UIView {
         } else {
             w = 56
             addSubview(horizontalLine)
-            horizontalLine.backgroundColor = UIColor.white
+            horizontalLine.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.5388484589)
         }
         self.frame.size.width = w
         self.frame.size.height = 38
         addSubview(circleNode)
-        circleNode.backgroundColor = UIColor.white
+        circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 0.54)
+        circleNode.layer.cornerRadius = 18
+        circleNode.layer.borderWidth = 2
+        circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.54)
     }
     
     fileprivate func layout() {
         circleNode.onSide(.left, 0, width: 38, height: 38)
         if !horizontalLine.isHidden {
-            horizontalLine.onSide(.right, 0, width: 18, height: 5)
+            horizontalLine.onSide(.right, 0, width: 18, height: 2)
         }
     }
     
