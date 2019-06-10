@@ -41,8 +41,8 @@ class ViewController: UIViewController {
         
         progressBar.onSide(.top, statusBarHeight + 5, width: progressBar.width, height: progressBar.height)
         horizontalRule.onSide(.top, statusBarHeight + progressBar.height + 5, width: horizontalRule.width, height: horizontalRule.height)
-        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height + 15, width: roundNodeSeries.width, height: roundNodeSeries.height)
-        horizontalRuleTwo.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height +  roundNodeSeries.height + 5, width: horizontalRuleTwo.width, height: horizontalRuleTwo.height)
+        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height + 10, width: roundNodeSeries.width, height: roundNodeSeries.height)
+        horizontalRuleTwo.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height +  roundNodeSeries.height + 15, width: horizontalRuleTwo.width, height: horizontalRuleTwo.height)
         
         let frameWidth = self.view.frame.width
         let frameHeight: CGFloat

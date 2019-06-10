@@ -23,7 +23,7 @@ class HorizontalRule: UIView {
     }
     
     func setup(){
-        line.frame = CGRect(x: 10, y: 18, width: self.width - 20, height: 2)
+        line.frame = CGRect(x: 13, y: 18, width: self.width - 26, height: 2)
         line.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         //line.onCenter(UIScreen.main.bounds.width, 38)
         self.addSubview(line)
