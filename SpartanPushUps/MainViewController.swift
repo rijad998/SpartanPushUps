@@ -9,14 +9,19 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     fileprivate let openSetupBtn = UIButton()
     fileprivate let progressBar = ProgressBarView(level: "NOVICE")
     fileprivate let roundNodeSeries = RoundNodeSeries()
     fileprivate let horizontalRule = HorizontalRule()
     fileprivate let horizontalRuleTwo = HorizontalRule()
-    
+    fileprivate let mainViewModel = MainViewModel()
+    fileprivate let roundProgressView = UIView()
+    fileprivate let roundBgImg = UIImage.loadImageData("bg-circle.png")?.cgImage
+    fileprivate let roundBgImgView = UIImageView()
+    fileprivate let audioPlayer = AudioPlayer()
+    fileprivate let lbl = UILabel()
     
     override func viewDidLoad() {
         
@@ -53,21 +58,26 @@ class ViewController: UIViewController {
             frameHeight = self.view.frame.height
         }
         
+        roundProgressView.frame = CGRect(x: frameWidth / 2 - 130, y: frameHeight - 510, width: 260, height: 260)
+        roundBgImgView.frame = CGRect(x: 0, y: 0, width: roundProgressView.width, height: roundProgressView.height)
+        
         openSetupBtn.frame = CGRect(x: 19, y: frameHeight - 70, width: frameWidth - 38, height: 50)
         openSetupBtn.titleLabel?.frame = CGRect(x: self.view.frame.width / 2 - 25, y: self.view.frame.height / 2 - 13, width: 50, height: 26)
-        
+        lbl.onCenter(260, 260)
     }
     
     
     func controlSuperView() {
-        
-        layout()
-        setup()
+        mainViewModel.delegate = self
         self.view.addSubview(openSetupBtn)
         self.view.addSubview(progressBar)
         self.view.addSubview(roundNodeSeries)
         self.view.addSubview(horizontalRule)
         self.view.addSubview(horizontalRuleTwo)
+        roundProgressView.addSubview(roundBgImgView)
+        self.view.addSubview(roundProgressView)
+        roundProgressView.addSubview(lbl)
+        setup()
     }
     
     
@@ -78,9 +88,15 @@ class ViewController: UIViewController {
         openSetupBtn.setTitle("SETUP", for: .normal)
         openSetupBtn.addTarget(self, action: #selector(openSetup(sender:)), for: .touchUpInside)
         
+        roundBgImgView.image = UIImage(cgImage: roundBgImg!)
+        
         progressBar.setup(progress: 87)
         
         roundNodeSeries.layout()
+        
+        lbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
+        lbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        //mainViewModel.playTimer()
     }
     
     
@@ -89,4 +105,22 @@ class ViewController: UIViewController {
         let setupController = SetupViewController()
         self.navigationController?.pushViewController(setupController, animated: true)
     }
+    
 }
+
+extension MainViewController: MainViewModelDelegate {
+    func sendTimeAndSound(currentTime: Int) {
+        print("Delegat Data prije zvuka \(currentTime)")
+        if currentTime > 0 && currentTime < 4 {
+            audioPlayer.playingSoundWith(fileName: "beep")
+        }
+        if currentTime == 0 {
+            audioPlayer.playingSoundWith(fileName: "finish_beeb")
+        }
+        print("Delegat Data prije labele: \(currentTime)")
+        lbl.text = String(currentTime)
+        print("Data prosla do delegata a current time je \(currentTime)")
+        print("--------------------------------")
+    }
+}
+
