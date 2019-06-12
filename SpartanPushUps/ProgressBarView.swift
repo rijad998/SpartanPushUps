@@ -22,6 +22,7 @@ class ProgressBarView: UIView {
     init(level: String) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
         self.level = level
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +32,7 @@ class ProgressBarView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        layout()
     }
     
     
@@ -60,10 +62,7 @@ class ProgressBarView: UIView {
         
     }
     
-    func setup(progress: CGFloat) {
-        
-        layout()
-        setup()
+    func dynamicSetup(progress: CGFloat) {
         
         progressLabel.text = "\(progress)% completed"
         

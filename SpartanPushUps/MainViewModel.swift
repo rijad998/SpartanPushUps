@@ -21,9 +21,11 @@ class MainViewModel {
     var timer = Timer()
     
     init(){
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+    
+    func setAndFireTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         timer.fire()
-        
     }
     
     @objc func timerAction(){

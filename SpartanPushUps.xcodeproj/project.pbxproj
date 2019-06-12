@@ -24,7 +24,6 @@
 		836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */; };
 		836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */; };
 		836F8F1122AA936B0020726B /* Exo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */; };
-		836F8F1322AE5A9B0020726B /* HorizontalRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F1222AE5A9B0020726B /* HorizontalRule.swift */; };
 		83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C63C2E22A94542003B911A /* ProgressBarView.swift */; };
 		83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */; };
 		83E8BEA622AFA8D70050E201 /* bg-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E8BEA522AFA8D60050E201 /* bg-circle.png */; };
@@ -79,7 +78,6 @@
 		836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundNodeSeries.swift; sourceTree = "<group>"; };
 		836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-BoldItalic.ttf"; path = "../../../../../Downloads/Exo/Exo-BoldItalic.ttf"; sourceTree = "<group>"; };
-		836F8F1222AE5A9B0020726B /* HorizontalRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRule.swift; sourceTree = "<group>"; };
 		83C63C2E22A94542003B911A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		83E8BEA522AFA8D60050E201 /* bg-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-circle.png"; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
 				83C63C2E22A94542003B911A /* ProgressBarView.swift */,
 				836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */,
-				836F8F1222AE5A9B0020726B /* HorizontalRule.swift */,
 				83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
 				835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */,
@@ -470,7 +467,6 @@
 				835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */,
 				8346468122A5314500FAF1C5 /* Config.swift in Sources */,
 				836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */,
-				836F8F1322AE5A9B0020726B /* HorizontalRule.swift in Sources */,
 				8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */,
 				8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */,
 				83E8BEAD22AFAA430050E201 /* MainViewModel.swift in Sources */,

@@ -23,7 +23,6 @@ class AudioPlayer {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: Bundle.main.url(forResource: fileName, withExtension: "wav")!)
             audioPlayer.prepareToPlay()
-            audioPlayer.play()
         } catch {
             print (error)
         }

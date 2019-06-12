@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
     fileprivate let openSetupBtn = UIButton()
     fileprivate let progressBar = ProgressBarView(level: "NOVICE")
     fileprivate let roundNodeSeries = RoundNodeSeries()
-    fileprivate let horizontalRule = HorizontalRule()
-    fileprivate let horizontalRuleTwo = HorizontalRule()
+    fileprivate let separatorOne = UIView()
+    fileprivate let separatorTwo = UIView()
     fileprivate let mainViewModel = MainViewModel()
     fileprivate let roundProgressView = UIView()
     fileprivate let roundBgImg = UIImage.loadImageData("bg-circle.png")?.cgImage
@@ -44,39 +44,41 @@ class MainViewController: UIViewController {
     
     func layout(){
         
-        progressBar.onSide(.top, statusBarHeight + 5, width: progressBar.width, height: progressBar.height)
-        horizontalRule.onSide(.top, statusBarHeight + progressBar.height + 5, width: horizontalRule.width, height: horizontalRule.height)
-        roundNodeSeries.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height + 10, width: roundNodeSeries.width, height: roundNodeSeries.height)
-        horizontalRuleTwo.onSide(.top, statusBarHeight + progressBar.height + horizontalRule.height +  roundNodeSeries.height + 15, width: horizontalRuleTwo.width, height: horizontalRuleTwo.height)
-        
         let frameWidth = self.view.frame.width
-        let frameHeight: CGFloat
+        let roundProgressCircle: CGFloat = 260
         
-        if DeviceProperty.isTypeX() {
-            frameHeight = self.view.frame.height - 20
-        } else {
-            frameHeight = self.view.frame.height
-        }
+        progressBar.onSide(.top, statusBarHeight + 5, width: progressBar.width, height: progressBar.height)
+        separatorOne.onSide(.top, progressBar.frame.maxY + 20, width: frameWidth - 20, height: 2)
+        roundNodeSeries.onSide(.top, separatorOne.frame.maxY + 20, width: roundNodeSeries.width, height: roundNodeSeries.height)
+        separatorTwo.onSide(.top, roundNodeSeries.frame.maxY + 20, width: frameWidth - 20, height: 2)
+        openSetupBtn.onSide(.bottom, bottomOffset, width: frameWidth - 38, height: 50)
         
-        roundProgressView.frame = CGRect(x: frameWidth / 2 - 130, y: frameHeight - 510, width: 260, height: 260)
-        roundBgImgView.frame = CGRect(x: 0, y: 0, width: roundProgressView.width, height: roundProgressView.height)
+        let spaceBetween = (openSetupBtn.frame.minY - separatorTwo.frame.maxY)
+        let middleCount = (spaceBetween - roundProgressCircle) / 2
         
-        openSetupBtn.frame = CGRect(x: 19, y: frameHeight - 70, width: frameWidth - 38, height: 50)
-        openSetupBtn.titleLabel?.frame = CGRect(x: self.view.frame.width / 2 - 25, y: self.view.frame.height / 2 - 13, width: 50, height: 26)
-        lbl.onCenter(260, 260)
+        roundProgressView.onSide(.top, separatorTwo.frame.maxY + middleCount, width: roundProgressCircle, height: roundProgressCircle)
+        
+        roundBgImgView.fillSuperView()
+        lbl.fillSuperView()
     }
     
     
     func controlSuperView() {
+        
         mainViewModel.delegate = self
-        self.view.addSubview(openSetupBtn)
-        self.view.addSubview(progressBar)
-        self.view.addSubview(roundNodeSeries)
-        self.view.addSubview(horizontalRule)
-        self.view.addSubview(horizontalRuleTwo)
-        roundProgressView.addSubview(roundBgImgView)
-        self.view.addSubview(roundProgressView)
-        roundProgressView.addSubview(lbl)
+        
+        for hr in [separatorOne, separatorTwo] {
+            hr.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+        
+        for subview in [openSetupBtn, progressBar, roundNodeSeries, separatorOne, separatorTwo, roundProgressView] {
+            self.view.addSubview(subview)
+        }
+
+        for roundSubview in [roundBgImgView, lbl] {
+            roundProgressView.addSubview(roundSubview)
+        }
+        
         setup()
     }
     
@@ -90,18 +92,21 @@ class MainViewController: UIViewController {
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
         
-        progressBar.setup(progress: 87)
+        progressBar.dynamicSetup(progress: 87)
         
         roundNodeSeries.layout()
         
         lbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         lbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        //mainViewModel.playTimer()
+        lbl.textAlignment = .center
+        
+        mainViewModel.setAndFireTimer()
+        
+        audioPlayer.playingSoundWith(fileName: "beep")
     }
     
     
     @objc func openSetup(sender: UIButton) {
-        
         let setupController = SetupViewController()
         self.navigationController?.pushViewController(setupController, animated: true)
     }
@@ -109,18 +114,16 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewModelDelegate {
+    
     func sendTimeAndSound(currentTime: Int) {
-        print("Delegat Data prije zvuka \(currentTime)")
         if currentTime > 0 && currentTime < 4 {
-            audioPlayer.playingSoundWith(fileName: "beep")
+            audioPlayer.audioPlayer.play()
         }
         if currentTime == 0 {
             audioPlayer.playingSoundWith(fileName: "finish_beeb")
+            audioPlayer.audioPlayer.play()
         }
-        print("Delegat Data prije labele: \(currentTime)")
         lbl.text = String(currentTime)
-        print("Data prosla do delegata a current time je \(currentTime)")
-        print("--------------------------------")
     }
 }
 

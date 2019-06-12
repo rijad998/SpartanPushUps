@@ -107,35 +107,3 @@ class SeriaItem: UIView {
     }
     
 }
-
-
-//func setup() {
-//
-//    for i in 0...4 {
-//
-//        let number = Int.random(in: 3 ... 5)
-//        pushUpLabel.text = "\(number)"
-//
-//        if i != 4 {
-//            nodeWithLine.frame = CGRect(x: i * 56, y: 0, width: 56, height: 38)
-//            nodeWithLine.addSubview(horizontalLine)
-//        } else {
-//            nodeWithLine.frame = CGRect(x: i * 56, y: 0, width: 38, height: 38)
-//        }
-//        circleNode.addSubview(pushUpLabel)
-//        nodeWithLine.addSubview(circleNode)
-//        nodeSeries.addSubview(nodeWithLine)
-//    }
-//
-//    pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 24)
-//
-//    circleNode.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
-//    circleNode.layer.cornerRadius = 18
-//    circleNode.layer.borderWidth = 2
-//    circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
-//    circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
-//
-//    horizontalLine.frame = CGRect(x: 38, y: 19, width: 18, height: 2)
-//    horizontalLine.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
-//
-//}

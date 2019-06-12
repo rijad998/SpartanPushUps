@@ -47,6 +47,15 @@ extension UIViewController {
         }
     }
     
+    var bottomOffset: CGFloat {
+        get {
+            if DeviceProperty.isTypeX() {
+                return 48
+            }
+            return 24
+        }
+    }
+    
     func setNavigationBarTransparent(){
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
