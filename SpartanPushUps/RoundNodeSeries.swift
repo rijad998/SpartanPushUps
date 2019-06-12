@@ -20,17 +20,18 @@ class RoundNodeSeries: UIView {
     fileprivate var items: [SeriaItem] = []
     fileprivate var nodeSeries = UIView()
     fileprivate var nekiWidth: CGFloat = 0
+    public var state: NodeState = .activeNext
     
-    init() {
+    init(series: [Int]) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42))
-        setup()
+        setup(series: series)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    func setup(series: [Int]) {
         
         for i in 0...4 {
             let item = SeriaItem()
@@ -42,6 +43,7 @@ class RoundNodeSeries: UIView {
                 item.setup(withLine: true)
                 nekiWidth += 56
             }
+            
             items.append(item)
             nodeSeries.addSubview(item)
         }
@@ -65,7 +67,6 @@ class SeriaItem: UIView {
     fileprivate var circleNode = UIView()
     fileprivate var horizontalLine = UIView()
     fileprivate var pushUpLabel = UILabel()
-    
     
     init() {
         super.init(frame: CGRect.zero)
@@ -93,10 +94,31 @@ class SeriaItem: UIView {
         self.frame.size.width = w
         self.frame.size.height = 38
         addSubview(circleNode)
-        circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 0.54)
         circleNode.layer.cornerRadius = 18
         circleNode.layer.borderWidth = 2
-        circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.54)
+        circleNode.addSubview(pushUpLabel)
+        pushUpLabel.fillSuperView()
+        pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 16)
+        pushUpLabel.textAlignment = .center
+    }
+    
+    func setNodeByState(state: NodeState) {
+        switch state {
+            case .activeDone:
+                circleNode.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+                circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+            case .activeNext:
+                circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
+                circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+            default:
+                circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 0.54)
+                circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.54)
+        }
+    }
+    
+    func dynamicSetup(state: NodeState, labelNumber: Int) {
+        setNodeByState(state: state)
+        pushUpLabel.text = String(labelNumber)
     }
     
     fileprivate func layout() {

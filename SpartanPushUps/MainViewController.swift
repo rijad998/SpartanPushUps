@@ -126,16 +126,14 @@ class MainViewController: UIViewController {
     func setMuteUnmuteByState(state: MuteBtnState) {
         switch state {
         case .muted:
-            // audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
             muteBtnState = .unmuted
         default:
-            // audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
             muteBtnState = .muted
         }
     }
     
 //    func muteUnmute() {
-        //if let audioP = audioPlayer.audioPlayer {
+//        if let audioP = audioPlayer.audioPlayer {
 //            if audioPlayer.audioPlayer.volume == 1 {
 //                audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
 //            } else {
@@ -151,20 +149,21 @@ class MainViewController: UIViewController {
     
     @objc func muteUnmute(sender: UIButton) {
         setMuteUnmuteByState(state: muteBtnState)
-//        muteUnmute()
     }
 }
 
 extension MainViewController: MainViewModelDelegate {
+    
+    func generateSeries(series: inout [Int]) {
+        
+    }
     
     func sendTimeAndSound(currentTime: Int) {
         
         if muteBtnState == .unmuted {
 
             if currentTime > 0 && currentTime < 14 {
-                
                 audioPlayer.playingSoundWith(fileName: "beep")
-                
                 if let audioP = audioPlayer.audioPlayer {
                     audioP.play()
                 } else {
@@ -173,9 +172,7 @@ extension MainViewController: MainViewModelDelegate {
             }
             
             if currentTime == 0 {
-                
                 audioPlayer.playingSoundWith(fileName: "finish_beeb")
-                
                 if let audioP = audioPlayer.audioPlayer {
                     audioP.play()
                 } else {
@@ -183,7 +180,6 @@ extension MainViewController: MainViewModelDelegate {
                 }
             }
         }
-        
         currentTimerLbl.text = String(currentTime)
     }
 }
