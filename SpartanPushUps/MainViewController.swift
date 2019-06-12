@@ -100,8 +100,6 @@ class MainViewController: UIViewController {
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
         
-        
-        
         roundNodeSeries.layout()
         
         currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
@@ -111,6 +109,9 @@ class MainViewController: UIViewController {
         mainViewModel.setAndFireTimer()
         
         audioPlayer.playingSoundWith(fileName: "beep")
+        
+        let randomNum = ceil(CGFloat.random(in: 1 ... 100))
+        progressBar.dynamicSetup(progress: randomNum)
         
         let speaker = UIImage(named: "speaker.png")
         muteBtn.setImage(speaker, for: .normal)
@@ -125,31 +126,64 @@ class MainViewController: UIViewController {
     func setMuteUnmuteByState(state: MuteBtnState) {
         switch state {
         case .muted:
-            audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
+            // audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
             muteBtnState = .unmuted
         default:
-            audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
+            // audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
             muteBtnState = .muted
         }
     }
     
+//    func muteUnmute() {
+        //if let audioP = audioPlayer.audioPlayer {
+//            if audioPlayer.audioPlayer.volume == 1 {
+//                audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
+//            } else {
+//                audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
+//            }
+//        } else {
+//            print("------------------------")
+//            print("ERROR SA AUDIO PLAYEROM")
+//            print("------------------------")
+//        }
+//    }
+    
+    
     @objc func muteUnmute(sender: UIButton) {
         setMuteUnmuteByState(state: muteBtnState)
-        let randomNum = ceil(CGFloat.random(in: 1 ... 100))
-        progressBar.dynamicSetup(progress: randomNum)
+//        muteUnmute()
     }
 }
 
 extension MainViewController: MainViewModelDelegate {
     
     func sendTimeAndSound(currentTime: Int) {
-        if currentTime > 0 && currentTime < 4 {
-            audioPlayer.audioPlayer.play()
+        
+        if muteBtnState == .unmuted {
+
+            if currentTime > 0 && currentTime < 14 {
+                
+                audioPlayer.playingSoundWith(fileName: "beep")
+                
+                if let audioP = audioPlayer.audioPlayer {
+                    audioP.play()
+                } else {
+                    print("---------------\nERROR SA AUDIO PLAYEROM 222222\n----------------")
+                }
+            }
+            
+            if currentTime == 0 {
+                
+                audioPlayer.playingSoundWith(fileName: "finish_beeb")
+                
+                if let audioP = audioPlayer.audioPlayer {
+                    audioP.play()
+                } else {
+                    print("---------------\nERROR SA AUDIO PLAYEROM 333333\n----------------")
+                }
+            }
         }
-        if currentTime == 0 {
-            audioPlayer.playingSoundWith(fileName: "finish_beeb")
-            audioPlayer.audioPlayer.play()
-        }
+        
         currentTimerLbl.text = String(currentTime)
     }
 }

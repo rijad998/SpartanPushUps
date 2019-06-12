@@ -15,7 +15,7 @@ protocol MainViewModelDelegate {
 
 class MainViewModel {
     
-    var timerCount = 8
+    var timerCount = 18
     var delegate: MainViewModelDelegate?
     var simpleCount = 1
     var timer = Timer()
