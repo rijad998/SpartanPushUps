@@ -41,7 +41,7 @@ class ProgressBarView: UIView {
         levelLabel.font = UIFont(name: Font.roboto, size: 16)
         levelLabel.text = level
         
-        progressLabel.font = UIFont(name: Font.roboto, size: 20)
+        progressLabel.font = UIFont(name: Font.exoBoldItalic, size: 20)
         
         [levelLabel, progressLabel].forEach { label in
             label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -70,14 +70,16 @@ class ProgressBarView: UIView {
         
         let w: CGFloat = progressPercentage - 6
         progressResult.onSide(.left, 3, width: w, height: 4)
+        
+        progressResult.removeFromSuperview()
+        progressHolder.addSubview(progressResult)
     }
-    
     
     func layout() {
         
-        levelLabel.frame = CGRect(x: 26, y: 0, width: progressHoldWidth - 12, height: 18)
-        progressLabel.frame = CGRect(x: 26, y: 24, width: progressHoldWidth - 12, height: 24)
-        progressHolder.frame = CGRect(x: 20, y: 52, width: progressHoldWidth, height: 10)
+        levelLabel.onSide(.top, 0, width: progressHoldWidth - 12, height: 18)
+        progressLabel.onSide(.top, 24, width: progressHoldWidth - 12, height: 24)
+        progressHolder.onSide(.top, 52, width: progressHoldWidth, height: 10)
     }
     
 }

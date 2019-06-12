@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum MuteBtnState {
+    case muted
+    case unmuted
+}
+
 class MainViewController: UIViewController {
     
     fileprivate let openSetupBtn = UIButton()
@@ -21,7 +26,9 @@ class MainViewController: UIViewController {
     fileprivate let roundBgImg = UIImage.loadImageData("bg-circle.png")?.cgImage
     fileprivate let roundBgImgView = UIImageView()
     fileprivate let audioPlayer = AudioPlayer()
-    fileprivate let lbl = UILabel()
+    fileprivate let currentTimerLbl = UILabel()
+    fileprivate let muteBtn = UIButton()
+    fileprivate var muteBtnState: MuteBtnState = .unmuted
     
     override func viewDidLoad() {
         
@@ -52,6 +59,7 @@ class MainViewController: UIViewController {
         roundNodeSeries.onSide(.top, separatorOne.frame.maxY + 20, width: roundNodeSeries.width, height: roundNodeSeries.height)
         separatorTwo.onSide(.top, roundNodeSeries.frame.maxY + 20, width: frameWidth - 20, height: 2)
         openSetupBtn.onSide(.bottom, bottomOffset, width: frameWidth - 38, height: 50)
+        muteBtn.frame = CGRect(x: frameWidth - 50, y: separatorTwo.frame.maxY + 20, width: 28, height: 28)
         
         let spaceBetween = (openSetupBtn.frame.minY - separatorTwo.frame.maxY)
         let middleCount = (spaceBetween - roundProgressCircle) / 2
@@ -59,7 +67,7 @@ class MainViewController: UIViewController {
         roundProgressView.onSide(.top, separatorTwo.frame.maxY + middleCount, width: roundProgressCircle, height: roundProgressCircle)
         
         roundBgImgView.fillSuperView()
-        lbl.fillSuperView()
+        currentTimerLbl.fillSuperView()
     }
     
     
@@ -71,11 +79,11 @@ class MainViewController: UIViewController {
             hr.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
         
-        for subview in [openSetupBtn, progressBar, roundNodeSeries, separatorOne, separatorTwo, roundProgressView] {
+        for subview in [openSetupBtn, progressBar, roundNodeSeries, separatorOne, separatorTwo, roundProgressView, muteBtn] {
             self.view.addSubview(subview)
         }
 
-        for roundSubview in [roundBgImgView, lbl] {
+        for roundSubview in [roundBgImgView, currentTimerLbl] {
             roundProgressView.addSubview(roundSubview)
         }
         
@@ -92,25 +100,44 @@ class MainViewController: UIViewController {
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
         
-        progressBar.dynamicSetup(progress: 87)
+        
         
         roundNodeSeries.layout()
         
-        lbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
-        lbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        lbl.textAlignment = .center
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
+        currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        currentTimerLbl.textAlignment = .center
         
         mainViewModel.setAndFireTimer()
         
         audioPlayer.playingSoundWith(fileName: "beep")
+        
+        let speaker = UIImage(named: "speaker.png")
+        muteBtn.setImage(speaker, for: .normal)
+        muteBtn.addTarget(self, action: #selector(muteUnmute(sender:)), for: .touchUpInside)
     }
-    
     
     @objc func openSetup(sender: UIButton) {
         let setupController = SetupViewController()
         self.navigationController?.pushViewController(setupController, animated: true)
     }
     
+    func setMuteUnmuteByState(state: MuteBtnState) {
+        switch state {
+        case .muted:
+            audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
+            muteBtnState = .unmuted
+        default:
+            audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
+            muteBtnState = .muted
+        }
+    }
+    
+    @objc func muteUnmute(sender: UIButton) {
+        setMuteUnmuteByState(state: muteBtnState)
+        let randomNum = ceil(CGFloat.random(in: 1 ... 100))
+        progressBar.dynamicSetup(progress: randomNum)
+    }
 }
 
 extension MainViewController: MainViewModelDelegate {
@@ -123,7 +150,7 @@ extension MainViewController: MainViewModelDelegate {
             audioPlayer.playingSoundWith(fileName: "finish_beeb")
             audioPlayer.audioPlayer.play()
         }
-        lbl.text = String(currentTime)
+        currentTimerLbl.text = String(currentTime)
     }
 }
 

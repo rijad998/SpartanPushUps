@@ -30,6 +30,7 @@
 		83E8BEAA22AFA9260050E201 /* finish_beeb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83E8BEA822AFA9250050E201 /* finish_beeb.wav */; };
 		83E8BEAB22AFA9260050E201 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83E8BEA922AFA9260050E201 /* beep.wav */; };
 		83E8BEAD22AFAA430050E201 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8BEAC22AFAA430050E201 /* MainViewModel.swift */; };
+		83EC192F22B106A6000AFE5B /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EC192E22B106A6000AFE5B /* speaker.png */; };
 		CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */; };
 		EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		83E8BEA822AFA9250050E201 /* finish_beeb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finish_beeb.wav; sourceTree = "<group>"; };
 		83E8BEA922AFA9260050E201 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		83E8BEAC22AFAA430050E201 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		83EC192E22B106A6000AFE5B /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		891129C041E3AA2B820559A7 /* Pods-SpartanPushUpsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsUITests/Pods-SpartanPushUpsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92CC24832F3D06518A28FE28 /* Pods-SpartanPushUpsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		8346467B22A52E9B00FAF1C5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				83EC192E22B106A6000AFE5B /* speaker.png */,
 				8346467C22A530F300FAF1C5 /* bg.png */,
 				83E8BEA522AFA8D60050E201 /* bg-circle.png */,
 			);
@@ -366,6 +369,7 @@
 				83E8BEAB22AFA9260050E201 /* beep.wav in Resources */,
 				835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */,
 				8346467D22A530F300FAF1C5 /* bg.png in Resources */,
+				83EC192F22B106A6000AFE5B /* speaker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
