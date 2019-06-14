@@ -115,11 +115,10 @@ class SeriaItem: UIView {
         addSubview(circleNode)
         circleNode.layer.cornerRadius = 18
         circleNode.layer.borderWidth = 2
+        circleNode.layer.shadowPath = UIBezierPath(roundedRect: .init(x: 0, y: 8, width: 38, height: 38), cornerRadius: 18).cgPath
         circleNode.layer.shadowColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
         circleNode.layer.shadowOpacity = 1
-        circleNode.layer.shadowOffset = .init(width: 0, height: 4)
-        circleNode.layer.shadowRadius = 5
-        
+        circleNode.layer.shouldRasterize = true
         circleNode.addSubview(pushUpLabel)
         pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 16)
         pushUpLabel.textAlignment = .center
