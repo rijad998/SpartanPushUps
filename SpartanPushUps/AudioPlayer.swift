@@ -36,5 +36,4 @@ class AudioPlayer {
             return false
         }
     }
-
 }

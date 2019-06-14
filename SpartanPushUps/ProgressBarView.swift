@@ -17,6 +17,7 @@ class ProgressBarView: UIView {
     fileprivate var progressResult = UIView()
     fileprivate var level: String = ""
     fileprivate let progressHoldWidth = UIScreen.main.bounds.width - 40
+    fileprivate var progressL: CGFloat = 0
     
     
     init(level: String) {
@@ -59,27 +60,29 @@ class ProgressBarView: UIView {
         
         addSubview(progressHolder)
         progressHolder.addSubview(progressResult)
-        
     }
+    
     
     func dynamicSetup(progress: CGFloat) {
         
-        progressLabel.text = "\(progress)% completed"
+        progressL = progress
+        progressLabel.text = "\(progressL)% completed"
         
-        let progressPercentage = (progress * progressHoldWidth) / 100
-        
-        let w: CGFloat = progressPercentage - 6
-        progressResult.onSide(.left, 3, width: w, height: 4)
-        
-        progressResult.removeFromSuperview()
-        progressHolder.addSubview(progressResult)
+        layout()
     }
     
+    
     func layout() {
-        
         levelLabel.onSide(.top, 0, width: progressHoldWidth - 12, height: 18)
         progressLabel.onSide(.top, 24, width: progressHoldWidth - 12, height: 24)
         progressHolder.onSide(.top, 52, width: progressHoldWidth, height: 10)
+        
+        dynamicResultPresent()
     }
-    
+
+    func dynamicResultPresent() {
+        let progressPercentage = (progressL * progressHoldWidth) / 100
+        let w: CGFloat = progressPercentage - 6
+        progressResult.onSide(.left, 3, width: w, height: 4)
+    }
 }

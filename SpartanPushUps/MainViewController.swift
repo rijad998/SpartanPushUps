@@ -99,9 +99,7 @@ class MainViewController: UIViewController {
         openSetupBtn.addTarget(self, action: #selector(openSetup(sender:)), for: .touchUpInside)
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
-        
-        roundNodeSeries.layout()
-        
+            
         currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         currentTimerLbl.textAlignment = .center
