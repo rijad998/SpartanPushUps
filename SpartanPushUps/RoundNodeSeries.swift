@@ -20,7 +20,8 @@ class RoundNodeSeries: UIView {
     fileprivate var items: [SeriaItem] = []
     fileprivate var nodeSeries = UIView()
     fileprivate var nekiWidth: CGFloat = 0
-    public var state: NodeState = .activeNext
+    public var state: NodeState = .inactive
+    var mainSeries: [Int] = []
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42))
@@ -36,30 +37,36 @@ class RoundNodeSeries: UIView {
         layout()
     }
     
-    func fillTheLevel(level: inout[Int]) {
-        for n in 1...5 {
-            let randomNum = Int.random(in: 3 ... 6)
-            level.append(randomNum)
-            print("Number \(randomNum) is added to the \(n). place in the level array")
+    func fillTheLevel(receivedArray: [Int]) {
+        mainSeries.removeAll()
+        mainSeries.append(contentsOf: receivedArray)
+        for n in 0...4 {
+            print("---------\nRound node series: \(n+1). clan niza je \(mainSeries[n])\n----------")
         }
+
+//        for n in 0...4 {
+//            let randomNum = Int.random(in: 3 ... 6)
+//            level.append(randomNum)
+//            print("Number \(randomNum) is added to the \(n). place in the level array")
+//        }
     }
     
     func setup() {
         
-        var series: [Int] = []
-        
-        fillTheLevel(level: &series)
+        for _ in 0...4 {
+            mainSeries.append(-1)
+        }
         
         for i in 0...4 {
             let item = SeriaItem()
             if i == 4 {
                 item.horizontalLine.isHidden = true
                 item.setup(withLine: false)
-                item.dynamicSetup(state: .activeNext, labelNumber: series[i])
+                item.dynamicSetup(state: .activeNext, labelNumber: mainSeries[i])
                 nekiWidth += 38
             } else {
                 item.setup(withLine: true)
-                item.dynamicSetup(state: .activeNext, labelNumber: series[i])
+                item.dynamicSetup(state: .activeNext, labelNumber: mainSeries[i])
                 nekiWidth += 56
             }
             items.append(item)
@@ -84,6 +91,7 @@ class SeriaItem: UIView {
     fileprivate var circleNode = UIView()
     fileprivate var horizontalLine = UIView()
     fileprivate var pushUpLabel = UILabel()
+    fileprivate var circleShadow = false
     
     init() {
         super.init(frame: CGRect.zero)
@@ -115,16 +123,21 @@ class SeriaItem: UIView {
         addSubview(circleNode)
         circleNode.layer.cornerRadius = 18
         circleNode.layer.borderWidth = 2
-        circleNode.layer.shadowPath = UIBezierPath(roundedRect: .init(x: 0, y: 8, width: 38, height: 38), cornerRadius: 18).cgPath
-        circleNode.layer.shadowColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
-        circleNode.layer.shadowOpacity = 1
-        circleNode.layer.shouldRasterize = true
+        
+        
+        
         circleNode.addSubview(pushUpLabel)
         pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 16)
         pushUpLabel.textAlignment = .center
         pushUpLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
+    func setShadow() {
+        circleNode.layer.shadowPath = UIBezierPath(roundedRect: .init(x: 0, y: 7, width: 38, height: 38), cornerRadius: 18).cgPath
+        circleNode.layer.shadowColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+        circleNode.layer.shadowOpacity = 1
+        circleNode.layer.shouldRasterize = true
+    }
     
     func setNodeByState(state: NodeState) {
         switch state {
@@ -132,21 +145,29 @@ class SeriaItem: UIView {
                 circleNode.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
                 circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
                 horizontalLine.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+                setShadow()
             case .activeNext:
                 circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
                 circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
                 horizontalLine.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+                setShadow()
             default:
                 circleNode.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 0.54)
                 circleNode.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.54)
                 horizontalLine.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 0.5388484589)
+                circleNode.layer.shadowOpacity = 0
         }
     }
     
     
     func dynamicSetup(state: NodeState, labelNumber: Int) {
         setNodeByState(state: state)
-        pushUpLabel.text = String(labelNumber)
+        if labelNumber > 0 {
+            pushUpLabel.text = String(labelNumber)
+        } else {
+            pushUpLabel.text = ""
+        }
+        
     }
     
     
@@ -158,3 +179,5 @@ class SeriaItem: UIView {
         pushUpLabel.fillSuperView()
     }    
 }
+
+

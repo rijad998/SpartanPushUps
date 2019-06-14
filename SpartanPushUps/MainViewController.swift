@@ -29,6 +29,11 @@ class MainViewController: UIViewController {
     fileprivate let currentTimerLbl = UILabel()
     fileprivate let muteBtn = UIButton()
     fileprivate var muteBtnState: MuteBtnState = .unmuted
+    fileprivate var tempArray: [Int] = []
+    
+    // ---- BUTTON FOR TESTING ----
+    let testBtn = UIButton()
+    // ---- BUTTON FOR TESTING ----
     
     override func viewDidLoad() {
         
@@ -60,6 +65,10 @@ class MainViewController: UIViewController {
         separatorTwo.onSide(.top, roundNodeSeries.frame.maxY + 20, width: frameWidth - 20, height: 2)
         openSetupBtn.onSide(.bottom, bottomOffset, width: frameWidth - 38, height: 50)
         muteBtn.frame = CGRect(x: frameWidth - 50, y: separatorTwo.frame.maxY + 20, width: 28, height: 28)
+        
+        // ---- BUTTON FOR TESTING ----
+        testBtn.onSide(.top, separatorTwo.frame.maxY + 10, width: 100, height: 50)
+        // ---- BUTTON FOR TESTING ----
         
         let spaceBetween = (openSetupBtn.frame.minY - separatorTwo.frame.maxY)
         let middleCount = (spaceBetween - roundProgressCircle) / 2
@@ -114,6 +123,18 @@ class MainViewController: UIViewController {
         let speaker = UIImage(named: "speaker.png")
         muteBtn.setImage(speaker, for: .normal)
         muteBtn.addTarget(self, action: #selector(muteUnmute(sender:)), for: .touchUpInside)
+        
+        // ---- BUTTON FOR TESTING ----
+        testBtn.setTitle("TEST", for: .normal)
+        testBtn.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        testBtn.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        testBtn.addTarget(self, action: #selector(testBtnFunc(sender:)), for: .touchUpInside)
+        self.view.addSubview(testBtn)
+        // ---- BUTTON FOR TESTING ----
+    }
+    
+    @objc func testBtnFunc(sender: UIButton) {
+        transferSeriesDataToRound()
     }
     
     @objc func openSetup(sender: UIButton) {
@@ -130,30 +151,22 @@ class MainViewController: UIViewController {
         }
     }
     
-//    func muteUnmute() {
-//        if let audioP = audioPlayer.audioPlayer {
-//            if audioPlayer.audioPlayer.volume == 1 {
-//                audioPlayer.audioPlayer.setVolume(0, fadeDuration: 0)
-//            } else {
-//                audioPlayer.audioPlayer.setVolume(1, fadeDuration: 0)
-//            }
-//        } else {
-//            print("------------------------")
-//            print("ERROR SA AUDIO PLAYEROM")
-//            print("------------------------")
-//        }
-//    }
-    
-    
     @objc func muteUnmute(sender: UIButton) {
         setMuteUnmuteByState(state: muteBtnState)
+    }
+    
+    func transferSeriesDataToRound() {
+        mainViewModel.generateTheSeries()
+        
     }
 }
 
 extension MainViewController: MainViewModelDelegate {
     
-    func generateSeries(series: inout [Int]) {
-        
+    func generateSeries(series: [Int]) {
+        tempArray.append(contentsOf: series)
+        roundNodeSeries.fillTheLevel(receivedArray: tempArray)
+        tempArray.removeAll()
     }
     
     func sendTimeAndSound(currentTime: Int) {

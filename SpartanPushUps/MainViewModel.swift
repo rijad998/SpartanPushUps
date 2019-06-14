@@ -11,7 +11,7 @@ import UIKit
 
 protocol MainViewModelDelegate {
     func sendTimeAndSound(currentTime: Int)
-    func generateSeries(series: inout[Int])
+    func generateSeries(series: [Int])
 }
 
 class MainViewModel {
@@ -20,20 +20,23 @@ class MainViewModel {
     var delegate: MainViewModelDelegate?
     var simpleCount = 1
     var timer = Timer()
-    var noviceLevelOne: [Int] = []
     
     init(){
-        // fillTheLevel(level: &noviceLevelOne)
+        
     }
     
-//    func fillTheLevel(level: inout[Int]) {
-//        for n in 1...5 {
-//            let randomNum = Int.random(in: 3 ... 6)
-//            level.append(randomNum)
-//            print("Number \(randomNum) is added to the \(n). place in the level array")
-//        }
-//        delegate?.generateSeries(series: &level)
-//    }
+    func generateTheSeries() {
+        var startingArray: [Int] = []
+        for n in 1...5 {
+            let randomNum = Int.random(in: 3 ... 6)
+            startingArray.append(randomNum)
+            print("Number \(randomNum) is added to the \(n). place in the level array")
+        }
+        for n in 0...4 {
+            print("--------\nMain View Model: \(n+1). clan niza je \(startingArray[n])\n--------")
+        }
+        delegate?.generateSeries(series: startingArray)
+    }
     
     func setAndFireTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
