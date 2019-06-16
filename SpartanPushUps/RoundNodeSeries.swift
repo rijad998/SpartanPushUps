@@ -43,21 +43,15 @@ class RoundNodeSeries: UIView {
         for n in 0...4 {
             print("---------\nRound node series: \(n+1). clan niza je \(mainSeries[n])\n----------")
         }
-
-//        for n in 0...4 {
-//            let randomNum = Int.random(in: 3 ... 6)
-//            level.append(randomNum)
-//            print("Number \(randomNum) is added to the \(n). place in the level array")
-//        }
     }
     
     func setup() {
-        
-        for _ in 0...4 {
+        let lastNum = mainSeries.count
+        for _ in 0...lastNum-1 {
             mainSeries.append(-1)
         }
         
-        for i in 0...4 {
+        for i in 0...lastNum-1 {
             let item = SeriaItem()
             if i == 4 {
                 item.horizontalLine.isHidden = true
@@ -123,9 +117,6 @@ class SeriaItem: UIView {
         addSubview(circleNode)
         circleNode.layer.cornerRadius = 18
         circleNode.layer.borderWidth = 2
-        
-        
-        
         circleNode.addSubview(pushUpLabel)
         pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 16)
         pushUpLabel.textAlignment = .center
@@ -161,7 +152,9 @@ class SeriaItem: UIView {
     
     
     func dynamicSetup(state: NodeState, labelNumber: Int) {
+        
         setNodeByState(state: state)
+        
         if labelNumber > 0 {
             pushUpLabel.text = String(labelNumber)
         } else {
@@ -179,5 +172,3 @@ class SeriaItem: UIView {
         pushUpLabel.fillSuperView()
     }    
 }
-
-

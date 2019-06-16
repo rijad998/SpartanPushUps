@@ -157,7 +157,14 @@ class MainViewController: UIViewController {
     
     func transferSeriesDataToRound() {
         mainViewModel.generateTheSeries()
-        
+        //doPushups(pushupSeries: tempArray)
+    }
+    
+    func doPushups(pushupSeries: [Int]) {
+        for n in pushupSeries {
+            print("---\(n)---")
+        }
+        print("----------------\n\n\n\n--------------------")
     }
 }
 
@@ -166,14 +173,12 @@ extension MainViewController: MainViewModelDelegate {
     func generateSeries(series: [Int]) {
         tempArray.append(contentsOf: series)
         roundNodeSeries.fillTheLevel(receivedArray: tempArray)
-        tempArray.removeAll()
     }
     
     func sendTimeAndSound(currentTime: Int) {
         
         if muteBtnState == .unmuted {
-
-            if currentTime > 0 && currentTime < 14 {
+            if currentTime > 0 && currentTime < 4 {
                 audioPlayer.playingSoundWith(fileName: "beep")
                 if let audioP = audioPlayer.audioPlayer {
                     audioP.play()
@@ -181,7 +186,6 @@ extension MainViewController: MainViewModelDelegate {
                     print("---------------\nERROR SA AUDIO PLAYEROM 222222\n----------------")
                 }
             }
-            
             if currentTime == 0 {
                 audioPlayer.playingSoundWith(fileName: "finish_beeb")
                 if let audioP = audioPlayer.audioPlayer {

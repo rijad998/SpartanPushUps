@@ -16,14 +16,13 @@ protocol MainViewModelDelegate {
 
 class MainViewModel {
     
-    var timerCount = 18
+    
+    var timerCount = 5
     var delegate: MainViewModelDelegate?
     var simpleCount = 1
     var timer = Timer()
     
-    init(){
-        
-    }
+    init(){}
     
     func generateTheSeries() {
         var startingArray: [Int] = []
