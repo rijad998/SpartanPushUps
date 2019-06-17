@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     fileprivate var tempArray: [Int] = []
     var testStates: [NodeState] = []
     fileprivate var currentNodePushups = 0
+    
     // ---- BUTTON FOR TESTING ----
     let testBtn = UIButton()
     // ---- BUTTON FOR TESTING ----
@@ -148,10 +149,13 @@ class MainViewController: UIViewController {
             while currentNodePushups > 0 {
                 print("-----\(currentNodePushups)-----")
                 currentTimerLbl.text = String(currentNodePushups)
+                currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
                 handleNoseTap()
             }
             if index != tempArray.count-1 {
+                currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 mainViewModel.setAndFireTimer(counter: shortPause)
+                print("\n------REST------\n")
             }
             testStates[index] = .activeDone
             roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
@@ -162,7 +166,7 @@ class MainViewController: UIViewController {
     @objc func testBtnFunc(sender: UIButton) {
         DataHandler.generateTheSeries()
         transferSeriesDataToRound()
-        //doPushups()
+        doPushups()
     }
     
     @objc func openSetupController(sender: UIButton) {
