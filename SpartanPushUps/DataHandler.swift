@@ -14,6 +14,7 @@ public class DataHandler {
     static var seriesArray: [Int] = []
     
     static func generateTheSeries() {
+        self.cleanArray()
         for n in 1...limit {
             let randomNum = Int.random(in: 3 ... 6)
             seriesArray.append(randomNum)

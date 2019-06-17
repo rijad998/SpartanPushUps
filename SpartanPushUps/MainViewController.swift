@@ -139,7 +139,14 @@ class MainViewController: UIViewController {
     }
     
     @objc func handleNoseTap(_ sender: UIGestureRecognizer? = nil) {
+        currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+        currentTimerLbl.text = String(currentNodePushups)
         currentNodePushups -= 1
+        
+        // kombinuj sa do pushupsom, ispod gornje linije ide provjera
+        // i prozivka doPushups funkcije
+        // naizmjenicno uzimanje informacija od doPushups fukncije i handleNoseTap funkcije
+        // rjesava trenutni problem ...... bar bi trebalo da rijesi
     }
     
     func doPushups(){
@@ -148,9 +155,7 @@ class MainViewController: UIViewController {
             currentNodePushups = i
             while currentNodePushups > 0 {
                 print("-----\(currentNodePushups)-----")
-                currentTimerLbl.text = String(currentNodePushups)
-                currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
-                handleNoseTap()
+                
             }
             if index != tempArray.count-1 {
                 currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
