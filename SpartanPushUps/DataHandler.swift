@@ -17,8 +17,7 @@ public class DataHandler {
         for n in 1...limit {
             let randomNum = Int.random(in: 3 ... 6)
             seriesArray.append(randomNum)
-            print("Number \(randomNum) is added to the \(n). place in the level array")
-            print("--------\nDataHandler: \(n). clan niza je \(seriesArray[n])\n--------")
+            print("--------\nDataHandler: \(n). clan niza je \(seriesArray[n-1])\n--------")
         }
     }
     

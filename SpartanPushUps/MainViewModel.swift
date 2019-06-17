@@ -30,7 +30,7 @@ class MainViewModel {
     }
     
     @objc func timerAction(){
-        print("Timer okinut \(self.simpleCount). put")
+        // print("Timer okinut \(self.simpleCount). put")
         self.simpleCount += 1
         self.delegate?.sendTimeAndSound(currentTime: self.timerCount)
         if timerCount == 0 {

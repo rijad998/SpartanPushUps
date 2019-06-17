@@ -135,6 +135,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func testBtnFunc(sender: UIButton) {
+        DataHandler.generateTheSeries()
         transferSeriesDataToRound()
         doPushups()
     }
@@ -171,10 +172,18 @@ class MainViewController: UIViewController {
     }
     
     func doPushups(){
-        for _ in tempArray {
-            print("---------\n\ni\n\n-----------")
+        print("\n\nDO PUSHUPS!!!\n")
+        for (index, i) in tempArray.enumerated() {
+            var j = i
+            while j > 0 {
+                print("---\(j)---")
+                j -= 1
+            }
             // if onClick or proximity sensor fired - pushup decrease
             // if pushup == 0 - activate rest, chage round button state
+            if index != tempArray.count-1 {
+                print("\n--- REST ---\n")
+            }
         }
     }
 }
