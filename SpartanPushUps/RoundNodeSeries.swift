@@ -37,12 +37,8 @@ class RoundNodeSeries: UIView {
         layout()
     }
     
-    func fillTheLevel(receivedArray: [Int]) {
-        mainSeries.removeAll()
-        mainSeries.append(contentsOf: receivedArray)
-        for n in 0...4 {
-            print("---------\nRound node series: \(n+1). clan niza je \(mainSeries[n])\n----------")
-        }
+    func update(receivedArray: [Int]){
+        //update nodes
     }
     
     func setup() {
@@ -56,11 +52,9 @@ class RoundNodeSeries: UIView {
             if i == 4 {
                 item.horizontalLine.isHidden = true
                 item.setup(withLine: false)
-                item.dynamicSetup(state: .activeNext, labelNumber: mainSeries[i])
                 nekiWidth += 38
             } else {
                 item.setup(withLine: true)
-                item.dynamicSetup(state: .activeNext, labelNumber: mainSeries[i])
                 nekiWidth += 56
             }
             items.append(item)

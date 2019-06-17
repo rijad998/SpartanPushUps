@@ -156,24 +156,22 @@ class MainViewController: UIViewController {
     }
     
     func transferSeriesDataToRound() {
-        mainViewModel.generateTheSeries()
+        tempArray = DataHandler.seriesArray
+        roundNodeSeries.update(receivedArray: tempArray)
+        doPushups()
         //doPushups(pushupSeries: tempArray)
     }
     
-    func doPushups(pushupSeries: [Int]) {
-        for n in pushupSeries {
-            print("---\(n)---")
+    func doPushups(){
+        for _ in tempArray {
+            print("---------\n\ni\n\n-----------")
+            // if onClick or proximity sensor fired - pushup decrease
+            // if pushup == 0 - activate rest, chage round button state
         }
-        print("----------------\n\n\n\n--------------------")
     }
 }
 
 extension MainViewController: MainViewModelDelegate {
-    
-    func generateSeries(series: [Int]) {
-        tempArray.append(contentsOf: series)
-        roundNodeSeries.fillTheLevel(receivedArray: tempArray)
-    }
     
     func sendTimeAndSound(currentTime: Int) {
         
