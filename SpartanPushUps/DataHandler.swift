@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-public struct DataHandler {
+public class DataHandler {
     
     static var seriesArray: [Int] = []
     
     static func generateTheSeries() {
-        for n in 1...5 {
+        for n in 1...limit {
             let randomNum = Int.random(in: 3 ... 6)
             seriesArray.append(randomNum)
             print("Number \(randomNum) is added to the \(n). place in the level array")

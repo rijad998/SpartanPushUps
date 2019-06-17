@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
     fileprivate let muteBtn = UIButton()
     fileprivate var muteBtnState: MuteBtnState = .unmuted
     fileprivate var tempArray: [Int] = []
+    var testStates: [NodeState] = []
     
     // ---- BUTTON FOR TESTING ----
     let testBtn = UIButton()
@@ -135,6 +136,7 @@ class MainViewController: UIViewController {
     
     @objc func testBtnFunc(sender: UIButton) {
         transferSeriesDataToRound()
+        doPushups()
     }
     
     @objc func openSetup(sender: UIButton) {
@@ -156,9 +158,15 @@ class MainViewController: UIViewController {
     }
     
     func transferSeriesDataToRound() {
-        tempArray = DataHandler.seriesArray
-        roundNodeSeries.update(receivedArray: tempArray)
-        doPushups()
+        testStates.append(.activeDone)
+        testStates.append(.activeDone)
+        testStates.append(.activeDone)
+        testStates.append(.activeNext)
+        testStates.append(.activeNext)
+        
+        tempArray.append(contentsOf: DataHandler.seriesArray)
+        roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
+        
         //doPushups(pushupSeries: tempArray)
     }
     

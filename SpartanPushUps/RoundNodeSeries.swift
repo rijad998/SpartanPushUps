@@ -16,55 +16,56 @@ enum NodeState {
 }
 
 class RoundNodeSeries: UIView {
-    
+
     fileprivate var items: [SeriaItem] = []
     fileprivate var nodeSeries = UIView()
-    fileprivate var nekiWidth: CGFloat = 0
     public var state: NodeState = .inactive
     var mainSeries: [Int] = []
-    
+
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42))
+        for _ in 0...limit-1 {
+            mainSeries.append(-1)
+        }
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layout()
     }
-    
-    func update(receivedArray: [Int]){
-        //update nodes
-    }
-    
-    func setup() {
-        let lastNum = mainSeries.count
-        for _ in 0...lastNum-1 {
-            mainSeries.append(-1)
+
+    func update(receivedArray: [Int], arrayOfStates: [NodeState]){
+        mainSeries.removeAll()
+        mainSeries.append(contentsOf: receivedArray)
+        for (index, item) in items.enumerated() {
+            item.dynamicSetup(labelNumber: mainSeries[index], state: arrayOfStates[index])
         }
-        
-        for i in 0...lastNum-1 {
+        layout()
+    }
+
+    func setup() {
+
+        for i in 0...limit-1 {
             let item = SeriaItem()
             if i == 4 {
-                item.horizontalLine.isHidden = true
                 item.setup(withLine: false)
-                nekiWidth += 38
             } else {
                 item.setup(withLine: true)
-                nekiWidth += 56
             }
             items.append(item)
             nodeSeries.addSubview(item)
         }
         addSubview(nodeSeries)
     }
-    
+
     func layout() {
-        nodeSeries.onCenter(nekiWidth, self.frame.height)
+        let nodeSeriesWidth = CGFloat((limit * 56) - 18)
+        nodeSeries.onCenter(nodeSeriesWidth, self.frame.height)
         var xOffset: CGFloat = 0
         for item in items {
             item.onSide(.left, xOffset, width: item.width, height: item.height)
@@ -75,39 +76,40 @@ class RoundNodeSeries: UIView {
 
 
 class SeriaItem: UIView {
-    
+
     fileprivate var circleNode = UIView()
     fileprivate var horizontalLine = UIView()
     fileprivate var pushUpLabel = UILabel()
     fileprivate var circleShadow = false
-    
+
     init() {
         super.init(frame: CGRect.zero)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layout()
     }
-    
+
     fileprivate func setup(withLine: Bool) {
-        
+
         var w:CGFloat = 0
         if !withLine {
             horizontalLine.isHidden = true
             w = 38
         } else {
+            horizontalLine.isHidden = false
             w = 56
             addSubview(horizontalLine)
         }
-        
+
         self.frame.size.width = w
         self.frame.size.height = 38
-        
+
         addSubview(circleNode)
         circleNode.layer.cornerRadius = 18
         circleNode.layer.borderWidth = 2
@@ -116,14 +118,14 @@ class SeriaItem: UIView {
         pushUpLabel.textAlignment = .center
         pushUpLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
-    
+
     func setShadow() {
         circleNode.layer.shadowPath = UIBezierPath(roundedRect: .init(x: 0, y: 7, width: 38, height: 38), cornerRadius: 18).cgPath
         circleNode.layer.shadowColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
         circleNode.layer.shadowOpacity = 1
         circleNode.layer.shouldRasterize = true
     }
-    
+
     func setNodeByState(state: NodeState) {
         switch state {
             case .activeDone:
@@ -143,26 +145,26 @@ class SeriaItem: UIView {
                 circleNode.layer.shadowOpacity = 0
         }
     }
-    
-    
-    func dynamicSetup(state: NodeState, labelNumber: Int) {
-        
+
+
+    func dynamicSetup(labelNumber: Int, state: NodeState) {
+
         setNodeByState(state: state)
-        
+
         if labelNumber > 0 {
             pushUpLabel.text = String(labelNumber)
         } else {
             pushUpLabel.text = ""
         }
-        
+
     }
-    
-    
+
+
     fileprivate func layout() {
         circleNode.onSide(.left, 0, width: 38, height: 38)
         if !horizontalLine.isHidden {
             horizontalLine.onSide(.right, 0, width: 18, height: 3)
         }
         pushUpLabel.fillSuperView()
-    }    
+    }
 }

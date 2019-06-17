@@ -19,3 +19,5 @@ public struct Font {
     static let roboto = "Roboto-Regular"
     static let exoBoldItalic = "Exo-BoldItalic"
 }
+
+public var limit = 5
