@@ -172,11 +172,11 @@ class MainViewController: UIViewController {
     }
     
     func doPushups(){
-        print("\n\nDO PUSHUPS!!!\n")
+        print("\n\nDO PUSHUPS!!!\n\n------START------\n\n")
         for (index, i) in tempArray.enumerated() {
             var j = i
             while j > 0 {
-                print("---\(j)---")
+                print("-----\(j)-----")
                 j -= 1
             }
             // if onClick or proximity sensor fired - pushup decrease
@@ -185,6 +185,7 @@ class MainViewController: UIViewController {
                 print("\n--- REST ---\n")
             }
         }
+        print("\n\n------END------\n\n")
     }
 }
 
