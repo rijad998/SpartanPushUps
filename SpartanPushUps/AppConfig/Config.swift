@@ -21,3 +21,7 @@ public struct Font {
 }
 
 public var limit = 5
+
+public var shortPause = 45
+public var middlePause = 60
+public var longPause = 75

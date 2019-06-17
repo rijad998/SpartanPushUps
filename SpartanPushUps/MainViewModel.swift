@@ -24,7 +24,8 @@ class MainViewModel {
     
     init(){}
     
-    func setAndFireTimer(){
+    func setAndFireTimer(counter: Int){
+        timerCount = counter
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         timer.fire()
     }

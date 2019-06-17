@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     fileprivate var muteBtnState: MuteBtnState = .unmuted
     fileprivate var tempArray: [Int] = []
     var testStates: [NodeState] = []
-    
+    fileprivate var currentNodePushups = 0
     // ---- BUTTON FOR TESTING ----
     let testBtn = UIButton()
     // ---- BUTTON FOR TESTING ----
@@ -106,7 +106,7 @@ class MainViewController: UIViewController {
         openSetupBtn.layer.cornerRadius = 25
         openSetupBtn.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.3098039216, blue: 0.9960784314, alpha: 1)
         openSetupBtn.setTitle("SETUP", for: .normal)
-        openSetupBtn.addTarget(self, action: #selector(openSetup(sender:)), for: .touchUpInside)
+        openSetupBtn.addTarget(self, action: #selector(openSetupController(sender:)), for: .touchUpInside)
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
             
@@ -114,7 +114,7 @@ class MainViewController: UIViewController {
         currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         currentTimerLbl.textAlignment = .center
         
-        mainViewModel.setAndFireTimer()
+        // mainViewModel.setAndFireTimer()
         
         audioPlayer.playingSoundWith(fileName: "beep")
         
@@ -125,6 +125,9 @@ class MainViewController: UIViewController {
         muteBtn.setImage(speaker, for: .normal)
         muteBtn.addTarget(self, action: #selector(muteUnmute(sender:)), for: .touchUpInside)
         
+        let noseTap = UIGestureRecognizer(target: self, action: #selector(self.handleNoseTap(_:)))
+        roundProgressView.addGestureRecognizer(noseTap)
+        
         // ---- BUTTON FOR TESTING ----
         testBtn.setTitle("TEST", for: .normal)
         testBtn.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
@@ -134,13 +137,35 @@ class MainViewController: UIViewController {
         // ---- BUTTON FOR TESTING ----
     }
     
+    @objc func handleNoseTap(_ sender: UIGestureRecognizer? = nil) {
+        currentNodePushups -= 1
+    }
+    
+    func doPushups(){
+        print("\n\nDO PUSHUPS!!!\n\n------START------\n\n")
+        for (index, i) in tempArray.enumerated() {
+            currentNodePushups = i
+            while currentNodePushups > 0 {
+                print("-----\(currentNodePushups)-----")
+                currentTimerLbl.text = String(currentNodePushups)
+                handleNoseTap()
+            }
+            if index != tempArray.count-1 {
+                mainViewModel.setAndFireTimer(counter: shortPause)
+            }
+            testStates[index] = .activeDone
+            roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
+        }
+        print("\n\n------END------\n\n")
+    }
+    
     @objc func testBtnFunc(sender: UIButton) {
         DataHandler.generateTheSeries()
         transferSeriesDataToRound()
-        doPushups()
+        //doPushups()
     }
     
-    @objc func openSetup(sender: UIButton) {
+    @objc func openSetupController(sender: UIButton) {
         let setupController = SetupViewController()
         self.navigationController?.pushViewController(setupController, animated: true)
     }
@@ -159,9 +184,9 @@ class MainViewController: UIViewController {
     }
     
     func transferSeriesDataToRound() {
-        testStates.append(.activeDone)
-        testStates.append(.activeDone)
-        testStates.append(.activeDone)
+        testStates.append(.activeNext)
+        testStates.append(.activeNext)
+        testStates.append(.activeNext)
         testStates.append(.activeNext)
         testStates.append(.activeNext)
         
@@ -169,23 +194,6 @@ class MainViewController: UIViewController {
         roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
         
         //doPushups(pushupSeries: tempArray)
-    }
-    
-    func doPushups(){
-        print("\n\nDO PUSHUPS!!!\n\n------START------\n\n")
-        for (index, i) in tempArray.enumerated() {
-            var j = i
-            while j > 0 {
-                print("-----\(j)-----")
-                j -= 1
-            }
-            // if onClick or proximity sensor fired - pushup decrease
-            // if pushup == 0 - activate rest, chage round button state
-            if index != tempArray.count-1 {
-                print("\n--- REST ---\n")
-            }
-        }
-        print("\n\n------END------\n\n")
     }
 }
 
