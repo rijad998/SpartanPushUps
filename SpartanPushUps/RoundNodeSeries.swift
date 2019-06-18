@@ -57,7 +57,6 @@ class RoundNodeSeries: UIView {
             } else {
                 item.setup(withLine: true)
             }
-            item.dynamicSetup(labelNumber: mainSeries[i], state: .inactive)
             items.append(item)
             nodeSeries.addSubview(item)
         }

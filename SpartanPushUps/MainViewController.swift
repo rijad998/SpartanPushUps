@@ -206,6 +206,25 @@ class MainViewController: UIViewController {
         
         //doPushups(pushupSeries: tempArray)
     }
+<<<<<<< HEAD
+=======
+    
+    func doPushups(){
+        print("\n\nDO PUSHUPS!!!\n")
+        for (index, i) in tempArray.enumerated() {
+            var j = i
+            while j > 0 {
+                print("---\(j)---")
+                j -= 1
+            }
+            // if onClick or proximity sensor fired - pushup decrease
+            // if pushup == 0 - activate rest, chage round button state
+            if index != tempArray.count-1 {
+                print("\n--- REST ---\n")
+            }
+        }
+    }
+>>>>>>> parent of ca75e6d... round series update, console log preview update
 }
 
 extension MainViewController: MainViewModelDelegate {
