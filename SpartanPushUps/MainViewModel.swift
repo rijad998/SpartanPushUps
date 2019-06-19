@@ -11,18 +11,37 @@ import UIKit
 
 protocol MainViewModelDelegate {
     func sendTimeAndSound(currentTime: Int)
+    func sendCurrentPushup(currentPushup: Int)
+    func activateRest(index: Int)
 }
 
 class MainViewModel {
-    
     
     var timerCount = 5
     var delegate: MainViewModelDelegate?
     var simpleCount = 1
     var timer = Timer()
+    var index = 0
+    var inValue = 0
     
+    init(){
+    }
     
-    init(){}
+    func controlLoop(){
+        inValue = DataHandler.seriesArray[index]
+        index += 1
+    }
+    
+    func decreaseValue(){
+        inValue -= 1
+        delegate?.sendCurrentPushup(currentPushup: inValue)
+        if inValue == 0 {
+            delegate?.activateRest(index: index)
+            sleep(1)
+            if index < limit { controlLoop() }
+            else  { print("\n\n-----KRAJ-----\n\n") }
+        }
+    }
     
     func setAndFireTimer(counter: Int){
         timerCount = counter

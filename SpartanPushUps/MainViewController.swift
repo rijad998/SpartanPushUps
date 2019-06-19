@@ -41,7 +41,6 @@ class MainViewController: UIViewController {
         
         super.viewDidLoad()
         view.layer.contents = UIImage.loadImageData("bg.png")?.cgImage
-        
         controlSuperView()
     }
     
@@ -139,39 +138,18 @@ class MainViewController: UIViewController {
     }
     
     @objc func handleNoseTap(_ sender: UIGestureRecognizer? = nil) {
-        currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
-        currentTimerLbl.text = String(currentNodePushups)
-        currentNodePushups -= 1
-        
-        // kombinuj sa do pushupsom, ispod gornje linije ide provjera
-        // i prozivka doPushups funkcije
-        // naizmjenicno uzimanje informacija od doPushups fukncije i handleNoseTap funkcije
-        // rjesava trenutni problem ...... bar bi trebalo da rijesi
+        mainViewModel.decreaseValue()
     }
     
-    func doPushups(){
-        print("\n\nDO PUSHUPS!!!\n\n------START------\n\n")
-        for (index, i) in tempArray.enumerated() {
-            currentNodePushups = i
-            while currentNodePushups > 0 {
-                print("-----\(currentNodePushups)-----")
-                
-            }
-            if index != tempArray.count-1 {
-                currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                mainViewModel.setAndFireTimer(counter: shortPause)
-                print("\n------REST------\n")
-            }
-            testStates[index] = .activeDone
-            roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
-        }
-        print("\n\n------END------\n\n")
+    func restActivation(){
+        currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        mainViewModel.setAndFireTimer(counter: shortPause)
     }
     
     @objc func testBtnFunc(sender: UIButton) {
         DataHandler.generateTheSeries()
         transferSeriesDataToRound()
-        doPushups()
+        // doPushups()
     }
     
     @objc func openSetupController(sender: UIButton) {
@@ -193,20 +171,24 @@ class MainViewController: UIViewController {
     }
     
     func transferSeriesDataToRound() {
-        testStates.append(.activeNext)
-        testStates.append(.activeNext)
-        testStates.append(.activeNext)
-        testStates.append(.activeNext)
-        testStates.append(.activeNext)
         
         tempArray.append(contentsOf: DataHandler.seriesArray)
-        roundNodeSeries.update(receivedArray: tempArray, arrayOfStates: testStates)
-        
-        //doPushups(pushupSeries: tempArray)
+        roundNodeSeries.update(receivedArray: tempArray)
     }
 }
 
 extension MainViewController: MainViewModelDelegate {
+    
+    func sendCurrentPushup(currentPushup: Int) {
+        currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
+        currentTimerLbl.text = String(currentPushup)
+    }
+    
+    func activateRest(index: Int) {
+        roundNodeSeries.updateStateByIndex(index: index+1, state: .activeDone)
+        currentTimerLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        mainViewModel.setAndFireTimer(counter: shortPause)
+    }
     
     func sendTimeAndSound(currentTime: Int) {
         

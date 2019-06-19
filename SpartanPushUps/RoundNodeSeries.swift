@@ -39,23 +39,26 @@ class RoundNodeSeries: UIView {
         layout()
     }
 
-    func update(receivedArray: [Int], arrayOfStates: [NodeState]){
+    func update(receivedArray: [Int]){
         mainSeries.removeAll()
         mainSeries.append(contentsOf: receivedArray)
         for (index, item) in items.enumerated() {
-            item.dynamicSetup(labelNumber: mainSeries[index], state: arrayOfStates[index])
+            item.dynamicSetuplabel(labelNumber: mainSeries[index])
         }
         layout()
     }
 
     func setup() {
-
+        
         for i in 0...limit-1 {
             let item = SeriaItem()
             if i == 4 {
                 item.setup(withLine: false)
             } else {
                 item.setup(withLine: true)
+            }
+            if i == 0 {
+                item.setNodeByState(state: .activeDone)
             }
             items.append(item)
             nodeSeries.addSubview(item)
@@ -71,6 +74,11 @@ class RoundNodeSeries: UIView {
             item.onSide(.left, xOffset, width: item.width, height: item.height)
             xOffset += item.width
         }
+    }
+    
+    func updateStateByIndex(index: Int, state: NodeState) {
+        items[index].setNodeByState(state: state)
+        layout()
     }
 }
 
@@ -117,6 +125,7 @@ class SeriaItem: UIView {
         pushUpLabel.font = UIFont(name: Font.exoBoldItalic, size: 16)
         pushUpLabel.textAlignment = .center
         pushUpLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        setNodeByState(state: .activeNext)
     }
 
     func setShadow() {
@@ -145,16 +154,14 @@ class SeriaItem: UIView {
                 circleNode.layer.shadowOpacity = 0
         }
     }
-
-
-    func dynamicSetup(labelNumber: Int, state: NodeState) {
-
-        setNodeByState(state: state)
+    
+    func dynamicSetuplabel(labelNumber: Int) {
 
         if labelNumber > 0 {
             pushUpLabel.text = String(labelNumber)
         } else {
             pushUpLabel.text = ""
+            setNodeByState(state: .inactive)
         }
 
     }
