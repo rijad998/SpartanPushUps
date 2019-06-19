@@ -98,6 +98,7 @@ class MainViewController: UIViewController {
         }
         
         setup()
+        
     }
     
     
@@ -125,8 +126,9 @@ class MainViewController: UIViewController {
         muteBtn.setImage(speaker, for: .normal)
         muteBtn.addTarget(self, action: #selector(muteUnmute(sender:)), for: .touchUpInside)
         
-        let noseTap = UIGestureRecognizer(target: self, action: #selector(self.handleNoseTap(_:)))
-        roundProgressView.addGestureRecognizer(noseTap)
+        let noseTap = UITapGestureRecognizer(target: self, action: #selector(self.handleNoseTap(_:)))
+        currentTimerLbl.addGestureRecognizer(noseTap)
+        currentTimerLbl.isUserInteractionEnabled = true
         
         // ---- BUTTON FOR TESTING ----
         testBtn.setTitle("TEST", for: .normal)
@@ -171,7 +173,6 @@ class MainViewController: UIViewController {
     }
     
     func transferSeriesDataToRound() {
-        
         tempArray.append(contentsOf: DataHandler.seriesArray)
         roundNodeSeries.update(receivedArray: tempArray)
     }

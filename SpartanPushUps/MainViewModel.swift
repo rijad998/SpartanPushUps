@@ -22,7 +22,7 @@ class MainViewModel {
     var simpleCount = 1
     var timer = Timer()
     var index = 0
-    var inValue = 0
+    var inValue = 5
     
     init(){
     }
@@ -37,7 +37,6 @@ class MainViewModel {
         delegate?.sendCurrentPushup(currentPushup: inValue)
         if inValue == 0 {
             delegate?.activateRest(index: index)
-            sleep(1)
             if index < limit { controlLoop() }
             else  { print("\n\n-----KRAJ-----\n\n") }
         }
