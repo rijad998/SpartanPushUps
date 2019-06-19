@@ -22,9 +22,7 @@
 		8367F49D22A561CE00D68C2E /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49C22A561CE00D68C2E /* Neon.swift */; };
 		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
 		8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */; };
-		836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */; };
 		836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */; };
-		836F8F1122AA936B0020726B /* Exo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */; };
 		83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C63C2E22A94542003B911A /* ProgressBarView.swift */; };
 		83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */; };
 		83E8BEA622AFA8D70050E201 /* bg-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E8BEA522AFA8D60050E201 /* bg-circle.png */; };
@@ -34,6 +32,8 @@
 		83EC192F22B106A6000AFE5B /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EC192E22B106A6000AFE5B /* speaker.png */; };
 		CA7FDF86C5D0CECB08236F4D /* Pods_SpartanPushUpsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */; };
 		EA89BFFC11FFAE4CDFB58874 /* Pods_SpartanPushUpsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CEB590DDEC9C911B191829 /* Pods_SpartanPushUpsTests.framework */; };
+		F4F1AEBA22BA245A00CF7E08 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4F1AEB822BA245A00CF7E08 /* Roboto-Regular.ttf */; };
+		F4F1AEBB22BA245A00CF7E08 /* Exo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4F1AEB922BA245A00CF7E08 /* Exo-BoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +78,7 @@
 		8367F49C22A561CE00D68C2E /* Neon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
 		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
 		8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../Downloads/fonts/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundNodeSeries.swift; sourceTree = "<group>"; };
-		836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-BoldItalic.ttf"; path = "../../../../../Downloads/Exo/Exo-BoldItalic.ttf"; sourceTree = "<group>"; };
 		83C63C2E22A94542003B911A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		83E8BEA522AFA8D60050E201 /* bg-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-circle.png"; sourceTree = "<group>"; };
@@ -93,6 +91,8 @@
 		9DA52866856CCB60BEB49573 /* Pods_SpartanPushUps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanPushUps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA53BA2657D5C709ACDD339 /* Pods-SpartanPushUpsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUpsTests.debug.xcconfig"; path = "Target Support Files/Pods-SpartanPushUpsTests/Pods-SpartanPushUpsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C907DF56A9D6580A9D4633 /* Pods-SpartanPushUps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanPushUps.release.xcconfig"; path = "Target Support Files/Pods-SpartanPushUps/Pods-SpartanPushUps.release.xcconfig"; sourceTree = "<group>"; };
+		F4F1AEB822BA245A00CF7E08 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		F4F1AEB922BA245A00CF7E08 /* Exo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-BoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 		8346467A22A52D0100FAF1C5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F4F1AEB722BA245A00CF7E08 /* Fonts */,
 				83E8BEA722AFA8F40050E201 /* Sounds */,
-				836F8F0B22A95EDB0020726B /* Fonts */,
 				8346467B22A52E9B00FAF1C5 /* Images */,
 			);
 			path = Assets;
@@ -215,15 +215,6 @@
 			path = SpartanPushUpsUITests;
 			sourceTree = "<group>";
 		};
-		836F8F0B22A95EDB0020726B /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				836F8F0C22A95EF90020726B /* Roboto-Regular.ttf */,
-				836F8F1022AA936B0020726B /* Exo-BoldItalic.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		83E8BEA722AFA8F40050E201 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +245,15 @@
 				21F4F4421C1E0D52902FBBB2 /* Pods_SpartanPushUpsUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4F1AEB722BA245A00CF7E08 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F4F1AEB822BA245A00CF7E08 /* Roboto-Regular.ttf */,
+				F4F1AEB922BA245A00CF7E08 /* Exo-BoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,14 +363,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F1AEBB22BA245A00CF7E08 /* Exo-BoldItalic.ttf in Resources */,
 				835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */,
 				83E8BEAA22AFA9260050E201 /* finish_beeb.wav in Resources */,
 				83E8BEA622AFA8D70050E201 /* bg-circle.png in Resources */,
 				8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */,
-				836F8F1122AA936B0020726B /* Exo-BoldItalic.ttf in Resources */,
-				836F8F0D22A95EF90020726B /* Roboto-Regular.ttf in Resources */,
 				83E8BEAB22AFA9260050E201 /* beep.wav in Resources */,
 				835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */,
+				F4F1AEBA22BA245A00CF7E08 /* Roboto-Regular.ttf in Resources */,
 				8346467D22A530F300FAF1C5 /* bg.png in Resources */,
 				83EC192F22B106A6000AFE5B /* speaker.png in Resources */,
 			);
@@ -646,7 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YCXLQJQ56C;
+				DEVELOPMENT_TEAM = 72BCA2FACA;
 				INFOPLIST_FILE = SpartanPushUps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,7 +665,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YCXLQJQ56C;
+				DEVELOPMENT_TEAM = 72BCA2FACA;
 				INFOPLIST_FILE = SpartanPushUps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
