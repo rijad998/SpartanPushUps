@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     fileprivate var tempArray: [Int] = []
     var testStates: [NodeState] = []
     fileprivate var currentNodePushups = 0
+    var noseTap = UITapGestureRecognizer()
     
     // ---- BUTTON FOR TESTING ----
     let testBtn = UIButton()
@@ -126,7 +127,7 @@ class MainViewController: UIViewController {
         muteBtn.setImage(speaker, for: .normal)
         muteBtn.addTarget(self, action: #selector(muteUnmute(sender:)), for: .touchUpInside)
         
-        let noseTap = UITapGestureRecognizer(target: self, action: #selector(self.handleNoseTap(_:)))
+        noseTap = UITapGestureRecognizer(target: self, action: #selector(self.handleNoseTap(_:)))
         currentTimerLbl.addGestureRecognizer(noseTap)
         currentTimerLbl.isUserInteractionEnabled = true
         
@@ -151,6 +152,7 @@ class MainViewController: UIViewController {
     @objc func testBtnFunc(sender: UIButton) {
         DataHandler.generateTheSeries()
         transferSeriesDataToRound()
+        mainViewModel.controlLoop()
         // doPushups()
     }
     
@@ -180,13 +182,23 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MainViewModelDelegate {
     
+    func enableDisableTap(enabled: Bool, index: Int) {
+        if enabled == true {
+            noseTap.isEnabled = true
+            if index < limit {
+                roundNodeSeries.updateStateByIndex(index: index, state: .activeDone)
+            }
+        } else {
+            noseTap.isEnabled = false
+        }
+    }
+    
     func sendCurrentPushup(currentPushup: Int) {
         currentTimerLbl.textColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
         currentTimerLbl.text = String(currentPushup)
     }
     
-    func activateRest(index: Int) {
-        roundNodeSeries.updateStateByIndex(index: index+1, state: .activeDone)
+    func activateRest() {
         currentTimerLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         mainViewModel.setAndFireTimer(counter: shortPause)
     }

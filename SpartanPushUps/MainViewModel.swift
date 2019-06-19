@@ -12,7 +12,8 @@ import UIKit
 protocol MainViewModelDelegate {
     func sendTimeAndSound(currentTime: Int)
     func sendCurrentPushup(currentPushup: Int)
-    func activateRest(index: Int)
+    func activateRest()
+    func enableDisableTap(enabled: Bool, index: Int)
 }
 
 class MainViewModel {
@@ -22,13 +23,13 @@ class MainViewModel {
     var simpleCount = 1
     var timer = Timer()
     var index = 0
-    var inValue = 5
+    var inValue = 0
     
-    init(){
-    }
+    init(){}
     
     func controlLoop(){
         inValue = DataHandler.seriesArray[index]
+        delegate?.enableDisableTap(enabled: true, index: index)
         index += 1
     }
     
@@ -36,9 +37,13 @@ class MainViewModel {
         inValue -= 1
         delegate?.sendCurrentPushup(currentPushup: inValue)
         if inValue == 0 {
-            delegate?.activateRest(index: index)
-            if index < limit { controlLoop() }
-            else  { print("\n\n-----KRAJ-----\n\n") }
+            delegate?.enableDisableTap(enabled: false, index: limit + 1)
+            if index < limit {
+                delegate?.activateRest()
+            } else {
+                print("\n\n-----KRAJ-----\n\n")
+            }
+            
         }
     }
     
@@ -53,6 +58,7 @@ class MainViewModel {
         self.simpleCount += 1
         self.delegate?.sendTimeAndSound(currentTime: self.timerCount)
         if timerCount == 0 {
+            controlLoop()
             self.timer.invalidate()
         }
         self.timerCount -= 1

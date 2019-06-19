@@ -57,9 +57,9 @@ class RoundNodeSeries: UIView {
             } else {
                 item.setup(withLine: true)
             }
-            if i == 0 {
-                item.setNodeByState(state: .activeDone)
-            }
+//            if i == 0 {
+//                item.setNodeByState(state: .activeDone)
+//            }
             items.append(item)
             nodeSeries.addSubview(item)
         }
