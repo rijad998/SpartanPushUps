@@ -17,7 +17,7 @@ enum NodeState {
 
 class RoundNodeSeries: UIView {
 
-    fileprivate var items: [SeriaItem] = []
+    var items: [SeriaItem] = []
     fileprivate var nodeSeries = UIView()
     public var state: NodeState = .inactive
     var mainSeries: [Int] = []

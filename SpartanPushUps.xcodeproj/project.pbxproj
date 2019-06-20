@@ -23,6 +23,7 @@
 		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
 		8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */; };
 		836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */; };
+		838AD21822BB911F0051F9F5 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD21722BB911F0051F9F5 /* VideoPlayer.swift */; };
 		83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C63C2E22A94542003B911A /* ProgressBarView.swift */; };
 		83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */; };
 		83E8BEA622AFA8D70050E201 /* bg-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E8BEA522AFA8D60050E201 /* bg-circle.png */; };
@@ -79,6 +80,7 @@
 		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
 		8367F4A022A57DFC00D68C2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundNodeSeries.swift; sourceTree = "<group>"; };
+		838AD21722BB911F0051F9F5 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		83C63C2E22A94542003B911A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		83E8BEA522AFA8D60050E201 /* bg-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-circle.png"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
 				83C63C2E22A94542003B911A /* ProgressBarView.swift */,
 				83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */,
+				838AD21722BB911F0051F9F5 /* VideoPlayer.swift */,
 				836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */,
 				8313FEF122B6658E00400EF9 /* DataHandler.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
@@ -469,6 +472,7 @@
 				8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */,
 				8313FEF222B6658E00400EF9 /* DataHandler.swift in Sources */,
 				83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */,
+				838AD21822BB911F0051F9F5 /* VideoPlayer.swift in Sources */,
 				83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */,
 				835DAD5322A12C6300E2C253 /* MainViewController.swift in Sources */,
 				8367F49D22A561CE00D68C2E /* Neon.swift in Sources */,

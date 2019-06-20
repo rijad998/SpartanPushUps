@@ -14,6 +14,7 @@ protocol MainViewModelDelegate {
     func sendCurrentPushup(currentPushup: Int)
     func activateRest()
     func enableDisableTap(enabled: Bool, index: Int)
+    func switchStateSetupReset(setupReset: Bool)
 }
 
 class MainViewModel {
@@ -30,6 +31,7 @@ class MainViewModel {
     func controlLoop(){
         inValue = DataHandler.seriesArray[index]
         delegate?.enableDisableTap(enabled: true, index: index)
+        delegate?.switchStateSetupReset(setupReset: false)
         index += 1
     }
     
