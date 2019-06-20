@@ -28,13 +28,15 @@ class MainViewModel {
     
     init(){}
     
+    ///
     func controlLoop(){
         inValue = DataHandler.seriesArray[index]
+        delegate?.sendCurrentPushup(currentPushup: inValue)
         delegate?.enableDisableTap(enabled: true, index: index)
         delegate?.switchStateSetupReset(setupReset: false)
         index += 1
     }
-    
+ 
     func decreaseValue(){
         inValue -= 1
         delegate?.sendCurrentPushup(currentPushup: inValue)

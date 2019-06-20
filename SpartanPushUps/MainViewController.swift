@@ -189,6 +189,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func resetWorkout(sender: UIButton) {
+        mainViewModel.timer.invalidate()
         for item in roundNodeSeries.items {
             item.setNodeByState(state: .activeNext)
         }
