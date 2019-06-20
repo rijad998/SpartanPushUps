@@ -8,3 +8,20 @@
 
 import Foundation
 import AVKit
+
+class VideoPlayer {
+    var playerLayer: AVPlayer?
+    
+    init(){}
+    
+    func viewDidLoad() {
+    
+    }
+}
+
+//let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+//let player = AVPlayer(url: videoURL!)
+//let playerLayer = AVPlayerLayer(player: player)
+//playerLayer.frame = self.view.bounds
+//self.view.layer.addSublayer(playerLayer)
+//player.play()

@@ -148,7 +148,7 @@ class MainViewController: UIViewController {
         currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         currentTimerLbl.textAlignment = .center
         currentTimerLbl.numberOfLines = 0
-        currentTimerLbl.text = "TAP TO\nSTART"
+        currentTimerLbl.text = "TAP TO\nSTART!"
         
         audioPlayer.playingSoundWith(fileName: "beep")
         

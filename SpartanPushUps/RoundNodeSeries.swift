@@ -15,13 +15,23 @@ enum NodeState {
     case inactive
 }
 
+/// Class for series of round nodes at the top of the page, in
+/// which there is series of numbers that represents number of
+/// pushups that user is supposed to do
 class RoundNodeSeries: UIView {
 
     var items: [SeriaItem] = []
     fileprivate var nodeSeries = UIView()
     public var state: NodeState = .inactive
     var mainSeries: [Int] = []
-
+    
+    /// Initialization of class. There are three functions inside
+    /// First one is for calling parent's init function inside which
+    /// is also defined frame for this function. Second function is
+    /// for filling the array (mainSeries) with number '-1' in order
+    /// to let others functions know that in the moment of initialization
+    /// there is still no real values inside the 'mainSeries' array. And
+    /// finally, third function is just calling setup function
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42))
         for _ in 0...limit-1 {
@@ -38,7 +48,11 @@ class RoundNodeSeries: UIView {
         super.layoutSubviews()
         layout()
     }
-
+    
+    
+    /// Function for updating content of every node inside node series
+    ///
+    /// - Parameter receivedArray: array of numbers of pushups
     func update(receivedArray: [Int]){
         mainSeries.removeAll()
         mainSeries.append(contentsOf: receivedArray)
@@ -47,7 +61,11 @@ class RoundNodeSeries: UIView {
         }
         layout()
     }
-
+    
+    
+    /// Main setup in which there is setup for every node
+    /// individually and in which are nodes added to the
+    /// items array
     func setup() {
         
         for i in 0...limit-1 {
@@ -57,15 +75,14 @@ class RoundNodeSeries: UIView {
             } else {
                 item.setup(withLine: true)
             }
-//            if i == 0 {
-//                item.setNodeByState(state: .activeDone)
-//            }
             items.append(item)
             nodeSeries.addSubview(item)
         }
         addSubview(nodeSeries)
     }
 
+    /// Main layout function that defines xOffset (width and distances)
+    /// between nodes and add them one by one to the series
     func layout() {
         let nodeSeriesWidth = CGFloat((limit * 56) - 18)
         nodeSeries.onCenter(nodeSeriesWidth, self.frame.height)
@@ -76,6 +93,13 @@ class RoundNodeSeries: UIView {
         }
     }
     
+    
+    /// Function that updates state of item(node + horizontal line) individually by
+    /// accessing it through it's itme's index
+    ///
+    /// - Parameters:
+    ///   - index: index of an item in the items array
+    ///   - state: new state of the item
     func updateStateByIndex(index: Int, state: NodeState) {
         items[index].setNodeByState(state: state)
         layout()
@@ -83,6 +107,11 @@ class RoundNodeSeries: UIView {
 }
 
 
+/// Class that defines whole item which includes
+/// node itself, horizontal line that connects node
+/// with adjecent node, label that displays number
+/// of pushups that need to be done and shadow underneath
+/// the node
 class SeriaItem: UIView {
 
     fileprivate var circleNode = UIView()
@@ -103,6 +132,7 @@ class SeriaItem: UIView {
         layout()
     }
 
+    /// Main setup of the node and other sub-items
     fileprivate func setup(withLine: Bool) {
 
         var w:CGFloat = 0
@@ -135,6 +165,11 @@ class SeriaItem: UIView {
         circleNode.layer.shouldRasterize = true
     }
 
+    
+    /// Function that defines differences between states
+    /// of nodes and set item according to the given node
+    ///
+    /// - Parameter state: state that item needs to get
     func setNodeByState(state: NodeState) {
         switch state {
             case .activeDone:
@@ -155,6 +190,11 @@ class SeriaItem: UIView {
         }
     }
     
+    
+    /// Dynamic setup of the label according to the
+    /// received number
+    ///
+    /// - Parameter labelNumber: number that is being shown
     func dynamicSetuplabel(labelNumber: Int) {
 
         if labelNumber > 0 {
@@ -166,7 +206,8 @@ class SeriaItem: UIView {
 
     }
 
-
+    
+    /// Main layout that puts node and line in the item
     fileprivate func layout() {
         circleNode.onSide(.left, 0, width: 38, height: 38)
         if !horizontalLine.isHidden {
