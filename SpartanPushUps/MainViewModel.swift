@@ -28,7 +28,6 @@ class MainViewModel {
     
     init(){}
     
-    ///
     func controlLoop(){
         inValue = DataHandler.seriesArray[index]
         delegate?.sendCurrentPushup(currentPushup: inValue)

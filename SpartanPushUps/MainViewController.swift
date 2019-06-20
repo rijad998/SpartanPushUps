@@ -144,11 +144,11 @@ class MainViewController: UIViewController {
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
             
-        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 35)
         currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         currentTimerLbl.textAlignment = .center
-        
-        // mainViewModel.setAndFireTimer()
+        currentTimerLbl.numberOfLines = 0
+        currentTimerLbl.text = "TAP TO\nSTART"
         
         audioPlayer.playingSoundWith(fileName: "beep")
         
@@ -214,6 +214,7 @@ class MainViewController: UIViewController {
 extension MainViewController: MainViewModelDelegate {
     
     func switchStateSetupReset(setupReset: Bool) {
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         if setupReset == true {
             setSetupResetBtnByState(state: .setup)
         } else {
