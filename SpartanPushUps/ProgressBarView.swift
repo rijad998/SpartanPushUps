@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+/// Class that provides information and progress bar
+/// that shows user's progress throughout the level
 class ProgressBarView: UIView {
     
     fileprivate var levelLabel = UILabel()
@@ -20,6 +22,9 @@ class ProgressBarView: UIView {
     fileprivate var progressL: CGFloat = 0
     
     
+    /// Initialization function
+    ///
+    /// - Parameter level: shows current user's level and displays it in label
     init(level: String) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
         self.level = level
@@ -36,7 +41,7 @@ class ProgressBarView: UIView {
         layout()
     }
     
-    
+    /// Main setup
     fileprivate func setup() {
         
         levelLabel.font = UIFont(name: Font.roboto, size: 16)
@@ -63,6 +68,9 @@ class ProgressBarView: UIView {
     }
     
     
+    /// Dynamic setup which changes progress label dynamicly
+    ///
+    /// - Parameter progress: Progress number that is to be shown on label
     func dynamicSetup(progress: CGFloat) {
         
         progressL = progress
@@ -72,6 +80,7 @@ class ProgressBarView: UIView {
     }
     
     
+    /// Main layout for progress components
     func layout() {
         levelLabel.onSide(.top, 0, width: progressHoldWidth - 12, height: 18)
         progressLabel.onSide(.top, 24, width: progressHoldWidth - 12, height: 24)
@@ -79,7 +88,9 @@ class ProgressBarView: UIView {
         
         dynamicResultPresent()
     }
-
+    
+    /// Dynamic calculation of percentage of progress and
+    /// calculating width of progress bar
     func dynamicResultPresent() {
         let progressPercentage = (progressL * progressHoldWidth) / 100
         let w: CGFloat = progressPercentage - 6

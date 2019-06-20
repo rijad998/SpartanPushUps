@@ -14,11 +14,17 @@ enum PlayedState {
     case unMuted
 }
 
+/// Audio Player class that is in charge of playing sounds,
+/// mostly, at the end of a timer
 class AudioPlayer {
 
     var audioPlayer: AVAudioPlayer!
     var state: PlayedState!
 
+    /// Function that receives name of the sound and create audio player
+    /// that will later play that sound
+    ///
+    /// - Parameter fileName: sound name
     func playingSoundWith(fileName: String) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: Bundle.main.url(forResource: fileName, withExtension: "wav")!)
@@ -28,6 +34,8 @@ class AudioPlayer {
         }
     }
 
+    /// Function that is checking existance of the audio player
+    /// and if it exists does it play any sound
     var isPlaying: Bool {
         get {
             if let player = audioPlayer {

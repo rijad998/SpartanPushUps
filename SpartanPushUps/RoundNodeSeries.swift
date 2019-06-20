@@ -157,7 +157,8 @@ class SeriaItem: UIView {
         pushUpLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         setNodeByState(state: .activeNext)
     }
-
+    
+    /// Function that defines and set shadow under nodes
     func setShadow() {
         circleNode.layer.shadowPath = UIBezierPath(roundedRect: .init(x: 0, y: 7, width: 38, height: 38), cornerRadius: 18).cgPath
         circleNode.layer.shadowColor = #colorLiteral(red: 0.8352941176, green: 0, blue: 0, alpha: 1)
