@@ -23,6 +23,7 @@
 		836330C322BD0E7C0055B26F /* Exo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836330C122BD0E7B0055B26F /* Exo-Italic.ttf */; };
 		836330C422BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836330C222BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf */; };
 		836330C622BD169C0055B26F /* eye24.png in Resources */ = {isa = PBXBuildFile; fileRef = 836330C522BD169C0055B26F /* eye24.png */; };
+		836330C822BD1DB90055B26F /* done24.png in Resources */ = {isa = PBXBuildFile; fileRef = 836330C722BD1DB90055B26F /* done24.png */; };
 		8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49A22A55BE700D68C2E /* SetupViewController.swift */; };
 		8367F49D22A561CE00D68C2E /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49C22A561CE00D68C2E /* Neon.swift */; };
 		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
@@ -85,6 +86,7 @@
 		836330C122BD0E7B0055B26F /* Exo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Italic.ttf"; sourceTree = "<group>"; };
 		836330C222BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		836330C522BD169C0055B26F /* eye24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye24.png; sourceTree = "<group>"; };
+		836330C722BD1DB90055B26F /* done24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done24.png; sourceTree = "<group>"; };
 		8367F49A22A55BE700D68C2E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		8367F49C22A561CE00D68C2E /* Neon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
 		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				8346467C22A530F300FAF1C5 /* bg.png */,
 				83E8BEA522AFA8D60050E201 /* bg-circle.png */,
 				836330C522BD169C0055B26F /* eye24.png */,
+				836330C722BD1DB90055B26F /* done24.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				836330C322BD0E7C0055B26F /* Exo-Italic.ttf in Resources */,
 				F4F1AEBB22BA245A00CF7E08 /* Exo-BoldItalic.ttf in Resources */,
 				835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */,
+				836330C822BD1DB90055B26F /* done24.png in Resources */,
 				83E8BEAA22AFA9260050E201 /* finish_beeb.wav in Resources */,
 				836330C422BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf in Resources */,
 				836330C622BD169C0055B26F /* eye24.png in Resources */,
