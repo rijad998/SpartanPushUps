@@ -120,7 +120,7 @@ class MainViewController: UIViewController {
         }
     }
     
-//
+    
     func setSetupResetBtnByState(state: SetupResetBtnState) {
         
         setupResetBtn.removeTarget(nil, action: nil, for: .allEvents)
@@ -144,11 +144,11 @@ class MainViewController: UIViewController {
         
         roundBgImgView.image = UIImage(cgImage: roundBgImg!)
             
-        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 35)
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         currentTimerLbl.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         currentTimerLbl.textAlignment = .center
         currentTimerLbl.numberOfLines = 0
-        currentTimerLbl.text = "TAP TO\nSTART!"
+        currentTimerLbl.text = "--"
         
         audioPlayer.playingSoundWith(fileName: "beep")
         
@@ -180,6 +180,8 @@ class MainViewController: UIViewController {
         DataHandler.generateTheSeries()
         transferSeriesDataToRound()
         mainViewModel.controlLoop()
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 35)
+        currentTimerLbl.text = "TAP TO\nSTART!"
         // doPushups()
     }
     
@@ -214,7 +216,6 @@ class MainViewController: UIViewController {
 extension MainViewController: MainViewModelDelegate {
     
     func switchStateSetupReset(setupReset: Bool) {
-        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         if setupReset == true {
             setSetupResetBtnByState(state: .setup)
         } else {
@@ -223,6 +224,7 @@ extension MainViewController: MainViewModelDelegate {
     }
     
     func enableDisableTap(enabled: Bool, index: Int) {
+        currentTimerLbl.font = UIFont(name: Font.exoBoldItalic, size: 60)
         if enabled == true {
             noseTap.isEnabled = true
             if index < limit {

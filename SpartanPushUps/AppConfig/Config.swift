@@ -18,6 +18,8 @@ public var bgImg: UIImage {
 public struct Font {
     static let roboto = "Roboto-Regular"
     static let exoBoldItalic = "Exo-BoldItalic"
+    static let exoSemiBoldItalic = "Exo-SemiBoldItalic"
+    static let exoItalic = "Exo-Italic"
 }
 
 public var limit = 5

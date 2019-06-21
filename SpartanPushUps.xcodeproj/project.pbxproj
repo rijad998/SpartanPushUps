@@ -18,6 +18,11 @@
 		835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */; };
 		835DAD6622A12C6700E2C253 /* SpartanPushUpsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD6522A12C6700E2C253 /* SpartanPushUpsTests.swift */; };
 		835DAD7122A12C6700E2C253 /* SpartanPushUpsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD7022A12C6700E2C253 /* SpartanPushUpsUITests.swift */; };
+		836330BE22BD02430055B26F /* SetupViewrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836330BD22BD02430055B26F /* SetupViewrModel.swift */; };
+		836330C022BD05C00055B26F /* TabPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836330BF22BD05C00055B26F /* TabPicker.swift */; };
+		836330C322BD0E7C0055B26F /* Exo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836330C122BD0E7B0055B26F /* Exo-Italic.ttf */; };
+		836330C422BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 836330C222BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf */; };
+		836330C622BD169C0055B26F /* eye24.png in Resources */ = {isa = PBXBuildFile; fileRef = 836330C522BD169C0055B26F /* eye24.png */; };
 		8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49A22A55BE700D68C2E /* SetupViewController.swift */; };
 		8367F49D22A561CE00D68C2E /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49C22A561CE00D68C2E /* Neon.swift */; };
 		8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367F49E22A56CED00D68C2E /* DeviceProperties.swift */; };
@@ -75,6 +80,11 @@
 		835DAD6C22A12C6700E2C253 /* SpartanPushUpsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanPushUpsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DAD7022A12C6700E2C253 /* SpartanPushUpsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanPushUpsUITests.swift; sourceTree = "<group>"; };
 		835DAD7222A12C6700E2C253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		836330BD22BD02430055B26F /* SetupViewrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewrModel.swift; sourceTree = "<group>"; };
+		836330BF22BD05C00055B26F /* TabPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPicker.swift; sourceTree = "<group>"; };
+		836330C122BD0E7B0055B26F /* Exo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-Italic.ttf"; sourceTree = "<group>"; };
+		836330C222BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		836330C522BD169C0055B26F /* eye24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye24.png; sourceTree = "<group>"; };
 		8367F49A22A55BE700D68C2E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		8367F49C22A561CE00D68C2E /* Neon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
 		8367F49E22A56CED00D68C2E /* DeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperties.swift; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 				83EC192E22B106A6000AFE5B /* speaker.png */,
 				8346467C22A530F300FAF1C5 /* bg.png */,
 				83E8BEA522AFA8D60050E201 /* bg-circle.png */,
+				836330C522BD169C0055B26F /* eye24.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -188,11 +199,13 @@
 				835DAD5222A12C6300E2C253 /* MainViewController.swift */,
 				83E8BEAC22AFAA430050E201 /* MainViewModel.swift */,
 				8367F49A22A55BE700D68C2E /* SetupViewController.swift */,
+				836330BD22BD02430055B26F /* SetupViewrModel.swift */,
 				83C63C2E22A94542003B911A /* ProgressBarView.swift */,
 				83E8BEA322AF8EDD0050E201 /* AudioPlayer.swift */,
 				838AD21722BB911F0051F9F5 /* VideoPlayer.swift */,
 				836F8F0E22AA6E780020726B /* RoundNodeSeries.swift */,
 				8313FEF122B6658E00400EF9 /* DataHandler.swift */,
+				836330BF22BD05C00055B26F /* TabPicker.swift */,
 				835DAD5722A12C6600E2C253 /* Assets.xcassets */,
 				835DAD5922A12C6600E2C253 /* LaunchScreen.storyboard */,
 				835DAD5C22A12C6600E2C253 /* Info.plist */,
@@ -255,6 +268,8 @@
 			children = (
 				F4F1AEB822BA245A00CF7E08 /* Roboto-Regular.ttf */,
 				F4F1AEB922BA245A00CF7E08 /* Exo-BoldItalic.ttf */,
+				836330C122BD0E7B0055B26F /* Exo-Italic.ttf */,
+				836330C222BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -366,9 +381,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836330C322BD0E7C0055B26F /* Exo-Italic.ttf in Resources */,
 				F4F1AEBB22BA245A00CF7E08 /* Exo-BoldItalic.ttf in Resources */,
 				835DAD5B22A12C6600E2C253 /* LaunchScreen.storyboard in Resources */,
 				83E8BEAA22AFA9260050E201 /* finish_beeb.wav in Resources */,
+				836330C422BD0E7C0055B26F /* Exo-SemiBoldItalic.ttf in Resources */,
+				836330C622BD169C0055B26F /* eye24.png in Resources */,
 				83E8BEA622AFA8D70050E201 /* bg-circle.png in Resources */,
 				8367F4A122A57DFC00D68C2E /* Default-568h@2x.png in Resources */,
 				83E8BEAB22AFA9260050E201 /* beep.wav in Resources */,
@@ -474,8 +492,10 @@
 				83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */,
 				838AD21822BB911F0051F9F5 /* VideoPlayer.swift in Sources */,
 				83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */,
+				836330C022BD05C00055B26F /* TabPicker.swift in Sources */,
 				835DAD5322A12C6300E2C253 /* MainViewController.swift in Sources */,
 				8367F49D22A561CE00D68C2E /* Neon.swift in Sources */,
+				836330BE22BD02430055B26F /* SetupViewrModel.swift in Sources */,
 				835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */,
 				8346468122A5314500FAF1C5 /* Config.swift in Sources */,
 				836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */,

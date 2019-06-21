@@ -15,12 +15,10 @@ class SetupViewController: UIViewController {
         view.layer.contents = UIImage.loadImageData("bg.png")?.cgImage
     }
     
-    func controllerConfig(){
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigationBarTransparent()
     }
 }
-
