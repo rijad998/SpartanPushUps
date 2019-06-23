@@ -21,14 +21,19 @@ enum TabStateType {
 
 class TabPicker: UIView {
     fileprivate var title = UILabel()
-    fileprivate
+    var seriesTab: [Tab] = []
+    fileprivate var numOfTab = 0
     
     init(tabType: TabStateType){
         var tabHeight = 0
         if tabType == .level {
             tabHeight = 40 * Tabs.numberOfLevels + 20
+            numOfTab = Tabs.numberOfLevels
+            title.text = ("CHOOSE LEVEL:")
         } else {
             tabHeight = 40 * Tabs.numberOfPushupTypes + 20
+            numOfTab = Tabs.numberOfPushupTypes
+            title.text = ("CHOOSE PUSHUP:")
         }
         super.init(frame: CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: tabHeight))
     }
@@ -39,6 +44,14 @@ class TabPicker: UIView {
     
     func setup(){
         
+        var yOffset = 0
+        
+        title.onSide(.top, 0, width: self.width - 40, height: 20)
+        title.font = UIFont(name: Font.roboto, size: 14)
+        
+        for i in 0...numOfTab-1 {
+            
+        }
     }
 }
 
