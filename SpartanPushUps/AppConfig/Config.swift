@@ -27,3 +27,9 @@ public var limit = 5
 public var shortPause = 10
 public var middlePause = 60
 public var longPause = 75
+
+
+public struct Tabs {
+    static let numberOfLevels = 4
+    static let numberOfPushupTypes = 2
+}
