@@ -44,6 +44,7 @@ class MainViewModel {
             if index < limit {
                 delegate?.activateRest()
             } else {
+                delegate?.switchStateSetupReset(setupReset: true)
                 print("\n\n-----KRAJ-----\n\n")
             }
             

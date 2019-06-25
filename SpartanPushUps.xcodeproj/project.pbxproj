@@ -12,6 +12,9 @@
 		8346467D22A530F300FAF1C5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8346467C22A530F300FAF1C5 /* bg.png */; };
 		8346468122A5314500FAF1C5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346468022A5314500FAF1C5 /* Config.swift */; };
 		8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346468222A5461C00FAF1C5 /* Extensions.swift */; };
+		83522FB822C1158900FB41F8 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83522FB722C1158900FB41F8 /* TabModel.swift */; };
+		83522FBA22C117D800FB41F8 /* RoundNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83522FB922C117D800FB41F8 /* RoundNodeModel.swift */; };
+		83522FBD22C11A6A00FB41F8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83522FBC22C11A6A00FB41F8 /* Enums.swift */; };
 		835DAD5122A12C6300E2C253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD5022A12C6300E2C253 /* AppDelegate.swift */; };
 		835DAD5322A12C6300E2C253 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAD5222A12C6300E2C253 /* MainViewController.swift */; };
 		835DAD5822A12C6600E2C253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835DAD5722A12C6600E2C253 /* Assets.xcassets */; };
@@ -69,6 +72,9 @@
 		8346467C22A530F300FAF1C5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		8346468022A5314500FAF1C5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8346468222A5461C00FAF1C5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		83522FB722C1158900FB41F8 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		83522FB922C117D800FB41F8 /* RoundNodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundNodeModel.swift; sourceTree = "<group>"; };
+		83522FBC22C11A6A00FB41F8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		835DAD4D22A12C6300E2C253 /* SpartanPushUps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanPushUps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DAD5022A12C6300E2C253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		835DAD5222A12C6300E2C253 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +176,23 @@
 			path = AppConfig;
 			sourceTree = "<group>";
 		};
+		83522FB622C1156700FB41F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83522FB722C1158900FB41F8 /* TabModel.swift */,
+				83522FB922C117D800FB41F8 /* RoundNodeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		83522FBB22C11A5D00FB41F8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				83522FBC22C11A6A00FB41F8 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		835DAD4422A12C6200E2C253 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +219,8 @@
 		835DAD4F22A12C6300E2C253 /* SpartanPushUps */ = {
 			isa = PBXGroup;
 			children = (
+				83522FBB22C11A5D00FB41F8 /* Enums */,
+				83522FB622C1156700FB41F8 /* Models */,
 				8346467F22A5312400FAF1C5 /* AppConfig */,
 				8346467A22A52D0100FAF1C5 /* Assets */,
 				835DAD5022A12C6300E2C253 /* AppDelegate.swift */,
@@ -492,8 +517,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8367F49F22A56CED00D68C2E /* DeviceProperties.swift in Sources */,
+				83522FB822C1158900FB41F8 /* TabModel.swift in Sources */,
 				8313FEF222B6658E00400EF9 /* DataHandler.swift in Sources */,
 				83C63C2F22A94542003B911A /* ProgressBarView.swift in Sources */,
+				83522FBA22C117D800FB41F8 /* RoundNodeModel.swift in Sources */,
 				838AD21822BB911F0051F9F5 /* VideoPlayer.swift in Sources */,
 				83E8BEA422AF8EDD0050E201 /* AudioPlayer.swift in Sources */,
 				836330C022BD05C00055B26F /* TabPicker.swift in Sources */,
@@ -505,6 +532,7 @@
 				836F8F0F22AA6E790020726B /* RoundNodeSeries.swift in Sources */,
 				8346468322A5461C00FAF1C5 /* Extensions.swift in Sources */,
 				8367F49B22A55BE700D68C2E /* SetupViewController.swift in Sources */,
+				83522FBD22C11A6A00FB41F8 /* Enums.swift in Sources */,
 				83E8BEAD22AFAA430050E201 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
